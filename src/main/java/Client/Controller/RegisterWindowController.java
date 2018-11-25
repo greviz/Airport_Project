@@ -57,15 +57,15 @@ public class RegisterWindowController {
 		String pass = passField.getText();
 		String firstName = firstNameTextField.getText();
 		String lastName = lastNameTextField.getText();
-		int pesel = Integer.parseInt(peselTextField.getText());
-		int phone = Integer.parseInt(phoneNrTextField.getText());
+		String pesel = peselTextField.getText();
+		String phone = phoneNrTextField.getText();
 		String email = emailTextField.getText();
 		String country = countryTextField.getText();
 		String city = cityTextField.getText();
 		String street = streetTextField.getText();
-		int houseNr = Integer.parseInt(houseNrTextField.getText());
-		int flatNr = Integer.parseInt(flatNrTextField.getText());
-	
+		String houseNr = houseNrTextField.getText();
+		String flatNr = flatNrTextField.getText();
+	System.out.println(pesel);
  		String statment = "SELECT * FROM UZYTKOWNIK where LOGIN like '" + login + "' and HASLO like '" + pass + "'";
 		int temp = Integer.parseInt(client.getString(statment));
 			
@@ -73,15 +73,15 @@ public class RegisterWindowController {
 			infoLabel.setVisible(true);
 			infoLabel.setText("Rejestracja zakoñczona niepowodzeniem");
 		} else if (login.length() == 0 || pass.length() == 0 || firstName.length() == 0 || lastName.length() == 0 
-				|| country.length() == 0 || city.length() == 0 || street.length() == 0 ) {
+				|| country.length() == 0 || city.length() == 0 || street.length() == 0 || pesel.length()==0) {
 			infoLabel.setVisible(true);
 			infoLabel.setText("Uzupe³nij wszystkie pola");
 		} else {
 			int max = 0;
 			statment = "SELECT MAX(ID_UZYTKOWNIKA) FROM UZYTKOWNIK";
 			max = Integer.parseInt(client.getString(statment)) + 1;
-			statment = "INSERT INTO uzytkownik VALUES (" + max + ",'" + login + "','" + pass + "'," + phone + ",'" + country +  "','" + city +  "','" 
-			+ street +  "','" + email + "'," + pesel +  ",'" + firstName +  "','" + lastName + "',null,null,null,null)";
+			statment = "INSERT INTO uzytkownik VALUES (" + max + ",'" + login + "','" + pass + "'," + Integer.parseInt(phone) + ",'" + country +  "','" + city +  "','" 
+			+ street +  "','" + email + "'," + Integer.parseInt(pesel) +  ",'" + firstName +  "','" + lastName + "',null,null,null,null)";
 			client.getString(statment);
 			
 			infoLabel.setVisible(true);

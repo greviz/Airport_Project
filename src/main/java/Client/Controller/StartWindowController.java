@@ -34,6 +34,8 @@ public class StartWindowController {
 	Button registerButton;
 	@FXML
 	Label clockLabel;
+	@FXML
+	Label infoLabel;
 
 	@FXML
 	public void initialize() {
@@ -42,11 +44,24 @@ public class StartWindowController {
 
 	@FXML
 	public void login() {
-		mainController.loadClientWindow();
+		// mainController.loadClientWindow();
 		// mainController.loadTechnicalWindow();
 		// mainController.loadWorkerWindow();
 		// mainController.loadAdminWindow();
-
+		String login = loginTextField.getText();
+		String pass = passTextField.getText();
+		
+		int temp = Integer.parseInt(client.getString("SELECT * FROM UZYTKOWNIK where login like '" + login + "' and haslo like '" + pass + "'"));
+		
+		if (temp != -1) {
+			mainController.loadClientWindow();
+		}
+		else
+		{
+			infoLabel.setText("Logowanie nie powiod³o siê");
+			infoLabel.setVisible(true);
+		}
+	
 	}
 
 	@FXML

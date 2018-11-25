@@ -43,6 +43,6 @@
       <Button fx:id="registerButton" layoutX="493.0" layoutY="295.0" mnemonicParsing="false" onAction="#register" text="Zarejestruj" />
       <Button fx:id="backButton" layoutX="79.0" layoutY="343.0" mnemonicParsing="false" onAction="#back" text="Wróc do ekranu logowania" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label fx:id="infoLabel" layoutX="430.0" layoutY="345.0" visible="false" />
+      <Label fx:id="infoLabel" layoutX="390.0" layoutY="345.0" visible="false" />
    </children>
 </AnchorPane>

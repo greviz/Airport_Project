@@ -12,7 +12,7 @@ public class Client {
 	Socket mySocket;
 	String temp;
 	public void Connect() throws IOException {
-		int port = 3607;
+		int port = 3608;
 		mySocket = new Socket("127.0.0.1", port);
 	}
 

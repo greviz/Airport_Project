@@ -23,5 +23,6 @@
       <Label layoutX="235.0" layoutY="283.0" text="Nie masz jeszcze konta?" />
       <Button fx:id="registerButton" layoutX="254.0" layoutY="319.0" mnemonicParsing="false" onAction="#register" text="Zarejestruj się" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
+      <Label fx:id="infoLabel" layoutX="220.0" layoutY="226.0" visible="false" />
    </children>
 </AnchorPane>
