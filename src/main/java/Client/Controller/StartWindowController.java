@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+import Client.Client;
 import Client.Display;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -21,6 +22,7 @@ import javafx.util.Duration;
 public class StartWindowController {
 
 	private MainScreenController mainController;
+	private Client client;
 
 	@FXML
 	TextField loginTextField;
@@ -40,9 +42,9 @@ public class StartWindowController {
 
 	@FXML
 	public void login() {
-		//mainController.loadClientWindow();
+		mainController.loadClientWindow();
 		// mainController.loadTechnicalWindow();
-		 mainController.loadWorkerWindow();
+		// mainController.loadWorkerWindow();
 		// mainController.loadAdminWindow();
 
 	}
@@ -59,11 +61,16 @@ public class StartWindowController {
 		}
 		RegisterWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
 		mainController.setScreen(pane);
 	}
 
 	public void setMainController(MainScreenController mainController) {
 		this.mainController = mainController;
 
+	}
+
+	public void setClient(Client client) {
+		this.client=client;
 	}
 }

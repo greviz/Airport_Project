@@ -2,6 +2,7 @@ package Client.Controller.Technical;
 
 import java.io.IOException;
 
+import Client.Client;
 import Client.Display;
 import Client.Controller.MainScreenController;
 import javafx.fxml.FXML;
@@ -24,6 +25,8 @@ public class TechnicalWindowController {
 	Button logoutButton;
 	@FXML
 	Label clockLabel;
+
+	private Client client;
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
@@ -82,5 +85,9 @@ public class TechnicalWindowController {
 
 	public void setMainController(MainScreenController mainController) {
 		this.mainController = mainController;
+	}
+
+	public void setClient(Client client) {
+		this.client=client;
 	}
 }

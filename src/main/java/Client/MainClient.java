@@ -1,5 +1,7 @@
 package Client;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -27,5 +29,6 @@ public class MainClient extends Application {
 		stg.setTitle("System zarz¹dzania lotniskiem");
 		//stg.setResizable(false);
 		stg.show();
+	
 	}
 }

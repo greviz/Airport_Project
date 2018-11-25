@@ -2,7 +2,7 @@ package Client.Controller;
 
 import java.io.IOException;
 
-import Client.Display;
+import Client.Client;
 import Client.Controller.Admin.AdminWindowController;
 import Client.Controller.Clients.ClientWindowController;
 import Client.Controller.Technical.TechnicalWindowController;
@@ -18,12 +18,21 @@ public class MainScreenController {
 	@FXML
 	private StackPane mainStackPane;
 	
+	private Client client;
 
 	@FXML
 	public void initialize() {
 		loadStartWindow();
 	}
-
+	
+	{
+		client = new Client();
+		try {
+			client.Connect();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public void loadStartWindow()
 	{
 		FXMLLoader loader = new FXMLLoader();
@@ -37,6 +46,7 @@ public class MainScreenController {
 		}
 		StartWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
+		ctrl.setClient(client);
 		setScreen(pane);
 	}
 	public void loadClientWindow() {
@@ -51,6 +61,7 @@ public class MainScreenController {
 		}
 		ClientWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
+		ctrl.setClient(client);
 		setScreen(pane);
 	}
 	public void loadTechnicalWindow() {
@@ -65,6 +76,7 @@ public class MainScreenController {
 		}
 		TechnicalWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
+		ctrl.setClient(client);
 		setScreen(pane);
 	}
 	public void loadAdminWindow() {
@@ -79,6 +91,7 @@ public class MainScreenController {
 		}
 		AdminWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
+		ctrl.setClient(client);
 		setScreen(pane);
 	}
 	public void loadWorkerWindow() {
@@ -93,6 +106,7 @@ public class MainScreenController {
 		}
 		WorkerWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
+		ctrl.setClient(client);
 		setScreen(pane);
 	}
 	private void setScreen(AnchorPane pane) {
