@@ -15,7 +15,7 @@ public class Client {
 	String temp;
 	User u;
 	public void Connect() throws IOException {
-		int port = 3608;
+		int port = 3609;
 		mySocket = new Socket("127.0.0.1", port);
 	}
 

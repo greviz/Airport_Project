@@ -8,7 +8,6 @@ import java.sql.Statement;
 
 import Data.User;
 
-
 public class JDBC {
 	private static Statement st;
 	private static Connection con;
@@ -51,53 +50,54 @@ public class JDBC {
 	}
 
 	public static User getUser(User object) {
-		
-		
+
 		System.out.println("DOWNLOADING FROM DB");
-        User user = null;
-        String sql = "Select id_uzytkownika,login,haslo,id_klienta,id_administratora,id_prac_tech,id_prac_adm from UZYTKOWNIK WHERE LOGIN LIKE '" 
-        + object.getLogin()+"' AND HASLO LIKE '"+ object.getPassword() + "'";
-        try {
+		User user = null;
+		String sql = "Select id_uzytkownika,login,haslo,id_klienta,id_administratora,id_prac_tech,id_prac_adm from UZYTKOWNIK WHERE LOGIN LIKE '"
+				+ object.getLogin() + "' AND HASLO LIKE '" + object.getPassword() + "'";
+		try {
 			res = st.executeQuery(sql);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-        try {
-            if (res.next() != false) {
-                    Object id = res.getObject(1);
-                    Object login = res.getObject(2);
-                    Object pass = res.getObject(3);
-                    Object idKlienta = res.getObject(4);
-                    Object idAdmin = res.getObject(5);
-                    Object idTechnical = res.getObject(6);
-                    Object idWorker = res.getObject(7);
-                    
-                    if (id != null) {
-                    {
-                    	if(idKlienta == null)
-                    	{
-                    		idKlienta = "-1";
-                    	}
-                    	if(idAdmin == null)
-                    	{
-                    		idAdmin = "-1";
-                    	}if(idTechnical == null)
-                    	{
-                    		idTechnical = "-1";
-                    	}if(idWorker == null)
-                    	{
-                    		idWorker = "-1";
-                    	}
-                    	user = new User(Integer.parseInt(id.toString()),login.toString(),pass.toString(),
-                    			idKlienta.toString(),idTechnical.toString(),idWorker.toString(),idAdmin.toString());
-                    }
-                    
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println("Bl¹d odczytu z bazy! " + e.getMessage() + ": " + e.getErrorCode());
-        }
-        return user;
+		try {
+			if (res.next() != false) {
+				Object id = res.getObject(1);
+				Object login = res.getObject(2);
+				Object pass = res.getObject(3);
+				Object idKlienta = res.getObject(4);
+				Object idAdmin = res.getObject(5);
+				Object idTechnical = res.getObject(6);
+				Object idWorker = res.getObject(7);
+
+				if (id == null) {
+					id = "-1";
+				}
+				if (idKlienta == null) {
+					idKlienta = "-1";
+				}
+				if (idAdmin == null) {
+					idAdmin = "-1";
+				}
+				if (idTechnical == null) {
+					idTechnical = "-1";
+				}
+				if (idWorker == null) {
+					idWorker = "-1";
+				}
+				user = new User(id.toString(), login.toString(), pass.toString(), idKlienta.toString(),
+						idTechnical.toString(), idWorker.toString(), idAdmin.toString());
+
+			}
+			else
+			{
+				user = new User("-1");
+			}
+
+		} catch (SQLException e) {
+			System.out.println("Bl¹d odczytu z bazy! " + e.getMessage() + ": " + e.getErrorCode());
+		}
+		return user;
 	}
 
 }
