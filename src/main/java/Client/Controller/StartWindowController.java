@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 import Client.Client;
 import Client.Display;
+import Data.User;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -51,10 +52,24 @@ public class StartWindowController {
 		String login = loginTextField.getText();
 		String pass = passTextField.getText();
 		
-		int temp = Integer.parseInt(client.getString("SELECT * FROM UZYTKOWNIK where login like '" + login + "' and haslo like '" + pass + "'"));
+		//int temp = Integer.parseInt(client.getString("SELECT * FROM UZYTKOWNIK where login like '" + login + "' and haslo like '" + pass + "'"));
+		User u = new User(login,pass);
+		 u = client.getUser(u);
+		 System.out.println(u.getIdKlienta());
+		 
 		
-		if (temp != -1) {
+		if (u.getIdKlienta() != -1) {
 			mainController.loadClientWindow();
+		}
+		
+		else if (u.getIdAdmin() != -1) {
+			mainController.loadAdminWindow();
+		}
+		else if (u.getIdTechnical() != -1) {
+			mainController.loadTechnicalWindow();
+		}
+		else if (u.getIdWorker() != -1) {
+			mainController.loadWorkerWindow();;
 		}
 		else
 		{

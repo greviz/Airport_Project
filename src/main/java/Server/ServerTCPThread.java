@@ -5,6 +5,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+import Data.User;
 
 public class ServerTCPThread extends Thread {
 	Socket mySocket;
@@ -47,7 +48,15 @@ public class ServerTCPThread extends Thread {
 					}
 					break;
 				}
+				if (object instanceof User) {
 
+					if (sendUser(mySocket, object)) {
+						System.out.println("SEND (" + mySocket.getPort() + ") OK");
+					} else {
+						System.out.println("SEND (" + mySocket.getPort() + ") FALSE");
+					}
+					break;
+				}
 			}
 		} catch (IOException e) {
 			return false;
@@ -57,9 +66,25 @@ public class ServerTCPThread extends Thread {
 		return true;
 	}
 
+	private boolean sendUser(Socket mySocket2, Object object) {
+
+		try {
+			if(object instanceof User)
+			{
+			User x = JDBC.getUser((User) object);
+			ObjectOutputStream out = new ObjectOutputStream(mySocket.getOutputStream());
+			out.writeObject(x);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
 	private boolean sendString(Socket mySocket, String statment) {
 		try {
-			String x  = JDBC.getString(statment);
+			String x = JDBC.getString(statment);
 			ObjectOutputStream out = new ObjectOutputStream(mySocket.getOutputStream());
 			out.writeObject(x);
 		} catch (IOException e) {
@@ -68,5 +93,5 @@ public class ServerTCPThread extends Thread {
 		}
 		return true;
 	}
-	
+
 }

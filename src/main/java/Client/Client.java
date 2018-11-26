@@ -6,17 +6,33 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.concurrent.Callable;
 
+import Data.User;
+
 
 public class Client {
 
 	Socket mySocket;
 	String temp;
+	User u;
 	public void Connect() throws IOException {
 		int port = 3608;
 		mySocket = new Socket("127.0.0.1", port);
 	}
 
 	
+	public User getUser(User u)
+	{
+		sendObject(new User(u));
+
+		while (true) {
+			Object object = getObject();
+			if (object instanceof User) {
+				u = (User) object;
+				break;
+			}
+		}
+		return u;
+	}
 	public String getString(String statment)
 	{
 		sendObject(new String(statment));
@@ -58,5 +74,7 @@ public class Client {
 		}
 		return object;
 	}
+
+
 
 }
