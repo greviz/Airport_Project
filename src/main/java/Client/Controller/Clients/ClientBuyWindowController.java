@@ -8,18 +8,21 @@ import Data.Flights;
 import Data.Select;
 import Data.Selects;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import oracle.sql.DATE;
 
-import java.sql.Date;
+import javax.swing.event.CaretListener;
 import java.sql.ResultSet;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Formatter;
 
 public class ClientBuyWindowController {
 	private MainScreenController mainController;
@@ -33,7 +36,7 @@ public class ClientBuyWindowController {
 	@FXML
 	ComboBox arrivalComboBox;
 	@FXML
-	ComboBox dateComboBox;
+	ComboBox<String> dateComboBox;
 	@FXML
 	TextField rowTextField;
 	@FXML
@@ -64,17 +67,44 @@ public class ClientBuyWindowController {
 		{
 			arrivalComboBox.getItems().add(s.get(i).getList().get(0));
 		}
+		seatComboBox.getItems().addAll("okno","srodek","przejscie");
 
-		seatComboBox.getItems().addAll(1,2,3);
 	}
 	@FXML
 	public void buy() {
 		String arrival = (String) arrivalComboBox.getValue();
 		String departure = (String) departureComboBox.getValue();
-		String date = (String) dateComboBox.getValue();
-		String row = rowTextField.getText();
-		Integer seat = (Integer) seatComboBox.getValue();
+		String date =  dateComboBox.getValue();
+		Integer row = null;
+		String seat = (String) seatComboBox.getValue();
+		int ticketId, ticketPrice, flightId;
+		if(arrival ==null || departure == null || date == null ||seat==null)
+		{
+			infoLabel.setText("Uzupelnij wszystkie pola");
+		}
+		else {
+			ticketId = Integer.parseInt(client.getString("SELECT MAX(ID_BILETU) FROM BILET")) + 1;
 
+			flightId = Integer.parseInt(client.getString("SELECT ID_LOTU FROM LOT WHERE ID_LOTNISKA_WYLOTU LIKE " +
+					"(SELECT ID_LOTNISKA FROM LOTNISKO WHERE MIASTO LIKE '" + departure + "') AND ID_LOTNISKA_PRZYLOTU LIKE (SELECT ID_LOTNISKA " +
+					"FROM LOTNISKO WHERE MIASTO LIKE '" + arrival + "')  AND DATA_LOTU LIKE  to_date ('" + date + "','YYYY-MM-DD HH24:MI')"));
+			ticketPrice = Integer.parseInt(client.getString("SELECT CENA_BILETU FROM LOT WHERE ID_LOTU LIKE " + flightId));
+			int rowNr = Integer.parseInt(client.getString("SELECT ILOSC_MIEJSC/6 FROM SAMOLOT NATURAL JOIN LOT WHERE ID_LOTU LIKE " + flightId));
+
+			try {
+				row = Integer.parseInt(rowTextField.getText());
+
+				if (row > rowNr) {
+					throw new Exception();
+				}
+				client.getString("INSERT INTO BILET VALUES (" + ticketId + "," + ticketPrice + "," + row + ",'" + seat + "'," +
+						client.getU().getIdKlienta() + "," + flightId + ")");
+				infoLabel.setText("Wykonano zakup");
+			} catch (Exception e) {
+				infoLabel.setText("Rz¹d musi byæ liczb¹ mniejsza niz " + rowNr);
+			}
+		}
+		infoLabel.setVisible(true);
 
 	}
 	@FXML
@@ -103,9 +133,12 @@ public class ClientBuyWindowController {
 					"LOTNISKO WHERE MIASTO LIKE '" +arrivalComboBox.getValue() + "' )");
 			for(int i=0;i<s.size();i++)
 			{
-				dateComboBox.getItems().add(s.get(i).getList().get(0));
-			}
+				Date temp = (Date) s.get(i).getList().get(0);
+				SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+				String date = DATE_FORMAT.format(temp);
+				dateComboBox.getItems().add(date);
 
+			}
 		}
 	}
 
