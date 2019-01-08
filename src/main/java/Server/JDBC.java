@@ -23,7 +23,7 @@ public class JDBC {
 	public static void closeConnection() {
 		System.out.print("\nZamykanie polaczenia z baz?:");
 		System.out.print("Close");
-		
+
 		try {
 			st.close();
 			con.close();
