@@ -1,4 +1,4 @@
-﻿package Server;
+package Server;
 
 import Data.*;
 
@@ -21,15 +21,17 @@ public class JDBC {
 	}
 
 	public static void closeConnection() {
-		System.out.print("\nZamykanie polaczenia z baz¹:");
+		System.out.print("\nZamykanie polaczenia z baz?:");
+		System.out.print("Close");
+		
 		try {
 			st.close();
 			con.close();
 		} catch (SQLException e) {
-			System.out.println("Bl¹d przy zamykaniu pol¹czenia z baz¹! " + e.getMessage() + ": " + e.getErrorCode());
+			System.out.println("Bl?d przy zamykaniu pol?czenia z baz?! " + e.getMessage() + ": " + e.getErrorCode());
 			System.exit(4);
 		}
-		System.out.print(" zamkniêcie OK");
+		System.out.print(" zamkni?cie OK");
 	}
 
 	public static String getString(String statment) {
@@ -85,14 +87,12 @@ public class JDBC {
 				user = new User(id.toString(), login.toString(), pass.toString(), idKlienta.toString(),
 						idTechnical.toString(), idWorker.toString(), idAdmin.toString());
 
-			}
-			else
-			{
+			} else {
 				user = new User("-1");
 			}
 
 		} catch (SQLException e) {
-			System.out.println("Bl¹d odczytu z bazy! " + e.getMessage() + ": " + e.getErrorCode());
+			System.out.println("Bl?d odczytu z bazy! " + e.getMessage() + ": " + e.getErrorCode());
 		}
 		return user;
 	}
@@ -109,12 +109,12 @@ public class JDBC {
 		try {
 			while (res.next()) {
 				int flightId = res.getInt(1);
-				int planeId= res.getInt(2);
-				int departureAirportId= res.getInt(3);
-				int arrivalAirportId= res.getInt(4);
+				int planeId = res.getInt(2);
+				int departureAirportId = res.getInt(3);
+				int arrivalAirportId = res.getInt(4);
 				String ticketPrice = res.getString(5);
 				String flightDate = res.getString(6);
-				Flight f = new Flight(flightId,planeId,departureAirportId,arrivalAirportId,ticketPrice,flightDate);
+				Flight f = new Flight(flightId, planeId, departureAirportId, arrivalAirportId, ticketPrice, flightDate);
 				flights.add(f);
 			}
 		} catch (SQLException e) {
@@ -136,9 +136,9 @@ public class JDBC {
 			while (res.next()) {
 
 				int airportId = res.getInt(1);
-				String country=res.getString(2);
-				String city=res.getString(3);
-				Airport a = new Airport(airportId,country,city);
+				String country = res.getString(2);
+				String city = res.getString(3);
+				Airport a = new Airport(airportId, country, city);
 				airports.add(a);
 			}
 		} catch (SQLException e) {
@@ -147,32 +147,32 @@ public class JDBC {
 		return airports;
 	}
 
-    public static Ticket getTicket(Ticket obj) {
+	public static Ticket getTicket(Ticket obj) {
 		String sql;
-		sql = "SELECT * FROM Bilet WHERE ID_BILETU LIKE " + obj.getId() + " and ID_KLIENTA LIKE " +obj.getClientId();
+		sql = "SELECT * FROM Bilet WHERE ID_BILETU LIKE " + obj.getId() + " and ID_KLIENTA LIKE " + obj.getClientId();
 		try {
 			res = st.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		Ticket t = new Ticket(-1,-1);
+		Ticket t = new Ticket(-1, -1);
 		try {
 			if (res.next() != false) {
-				 int id = res.getInt(1);
-				 int price = res.getInt(2);
-				 int row = res.getInt(3);
-				 String type = res.getString(4);
-				 int clientId = res.getInt(5);
-				 int idLotu = res.getInt(6);
+				int id = res.getInt(1);
+				int price = res.getInt(2);
+				int row = res.getInt(3);
+				String type = res.getString(4);
+				int clientId = res.getInt(5);
+				int idLotu = res.getInt(6);
 
-				t = new Ticket(id,price,row,type,clientId,idLotu);
+				t = new Ticket(id, price, row, type, clientId, idLotu);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return t;
 
-    }
+	}
 
 
 	public static Selects getSelect(Select object) {
@@ -191,8 +191,7 @@ public class JDBC {
 		try {
 			while (res.next()) {
 				ArrayList<Object> list = new ArrayList<Object>();
-				for(int i=1;i<=columnNumber;i++)
-				{
+				for (int i = 1; i <= columnNumber; i++) {
 					list.add(res.getObject(i));
 				}
 				Select s = new Select(list);
@@ -204,7 +203,7 @@ public class JDBC {
 		return t;
 	}
 
-    public static Planes getPlanes() {
+	public static Planes getPlanes() {
 		String sql;
 		sql = "SELECT * FROM SAMOLOT";
 		try {
@@ -217,17 +216,17 @@ public class JDBC {
 			while (res.next()) {
 
 				int planeId = res.getInt(1);
-				String name=res.getString(2);
-				String model=res.getString(3);
+				String name = res.getString(2);
+				String model = res.getString(3);
 				int seats = res.getInt(4);
-				Plane p = new Plane(planeId,name,model,seats);
+				Plane p = new Plane(planeId, name, model, seats);
 				planes.add(p);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return planes;
-    }
+	}
 
 	public static Users getUsers() {
 		String sql;
@@ -264,7 +263,7 @@ public class JDBC {
 					idWorker = "-1";
 				}
 
-				User u = new User(Integer.parseInt(id.toString()),idKlienta.toString(),idTechnical.toString(),idWorker.toString(),idAdmin.toString(),firstName,lastName);
+				User u = new User(Integer.parseInt(id.toString()), idKlienta.toString(), idTechnical.toString(), idWorker.toString(), idAdmin.toString(), firstName, lastName);
 				users.add(u);
 			}
 		} catch (SQLException e) {
@@ -272,8 +271,4 @@ public class JDBC {
 		}
 		return users;
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> dd6a07712d5ea5cdc5ac8f88060d559fd54128eb

@@ -24,5 +24,7 @@
       <Button fx:id="cancelButton" layoutX="250.0" layoutY="261.0" mnemonicParsing="false" onAction="#cancel" text="Odwołaj lot" />
       <Button fx:id="logoutButton" layoutX="39.0" layoutY="337.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
+      <Button fx:id="plane" layoutX="78.0" layoutY="116.0" mnemonicParsing="false" onAction="#addPlane" text="Dodaj samolot" />
+      <Button fx:id="airport" layoutX="78.0" layoutY="187.0" mnemonicParsing="false" onAction="#addAirport" text="Dodaj lotnisko" />
    </children>
 </AnchorPane>

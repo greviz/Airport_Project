@@ -2,8 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -28,19 +28,32 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="77.0" layoutY="182.0" text="Miasto przylotu">
+      <Label layoutX="77.0" layoutY="138.0" text="Miasto przylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="102.0" layoutY="272.0" text="Termin">
+      <Label layoutX="9.0" layoutY="229.0" text="Termin w formacie dd-mm-yyyy hh:mm">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <ComboBox fx:id="departureComboBox" layoutX="235.0" layoutY="88.0" onAction="#departure" prefWidth="150.0" />
-      <ComboBox fx:id="arrivalComboBox" layoutX="235.0" layoutY="178.0" onAction="#arrival" prefWidth="150.0" />
-      <Button fx:id="addButton" layoutX="286.0" layoutY="324.0" mnemonicParsing="false" onAction="#add" text="Dodaj" />
-      <DatePicker fx:id="datePicker" layoutX="223.0" layoutY="268.0" onAction="#date" />
+      <ComboBox fx:id="arrivalComboBox" layoutX="235.0" layoutY="134.0" onAction="#arrival" prefWidth="150.0" />
+      <Button fx:id="addButton" layoutX="276.0" layoutY="303.0" mnemonicParsing="false" onAction="#add" text="Dodaj" />
+      <Label fx:id="infoLabel" alignment="CENTER" layoutX="147.0" layoutY="340.0" prefHeight="18.0" prefWidth="303.0" textAlignment="CENTER" />
+      <ComboBox fx:id="planeComboBox" layoutX="235.0" layoutY="180.0" prefWidth="150.0" />
+      <TextField fx:id="datePicker" layoutX="236.0" layoutY="225.0" onAction="#date" />
+      <TextField fx:id="priceTextField" layoutX="236.0" layoutY="264.0" />
+      <Label layoutX="108.0" layoutY="268.0" text="Cena">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="184.0" text="Samolot">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
