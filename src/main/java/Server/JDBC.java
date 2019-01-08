@@ -12,7 +12,8 @@ public class JDBC {
 
 	public static void connectToDB() {
 		try {
-			con = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-E0K593V:1521:oracl", "lot", "test");
+			System.out.println("driver");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-E0K593V:1521:oracl", "lot", "lot");
 			st = con.createStatement();
 		} catch (SQLException e) {
 			e.printStackTrace();
