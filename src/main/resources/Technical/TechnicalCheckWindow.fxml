@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Technical.TechnicalCheckWindowController">
    <children>
@@ -13,5 +16,22 @@
          </image>
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
+      <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
+      <Label layoutX="261.0" layoutY="48.0" text="Zleć naprawę">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="planeComboBox" layoutX="279.0" layoutY="93.0" prefWidth="150.0" />
+      <Label layoutX="84.0" layoutY="97.0" text="Wybierz samolot">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="infoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="340.0" prefHeight="18.0" prefWidth="174.0" textAlignment="CENTER" />
+      <Button fx:id="checkButton" alignment="CENTER" layoutX="227.0" layoutY="149.0" mnemonicParsing="false" onAction="#check" text="Sprawdź stan techniczny" />
+      <Label fx:id="infoLabel" alignment="CENTER" layoutX="144.0" layoutY="305.0" prefHeight="18.0" prefWidth="310.0" textAlignment="CENTER" />
+      <Button fx:id="efficientButton" alignment="CENTER" layoutX="201.0" layoutY="200.0" mnemonicParsing="false" onAction="#efficient" text="Zmień stan techniczny na sprawny" />
+      <Button fx:id="inefficientButton" alignment="CENTER" layoutX="193.0" layoutY="257.0" mnemonicParsing="false" onAction="#inefficient" text="Zmień stan techniczny na niesprawny" />
    </children>
 </AnchorPane>

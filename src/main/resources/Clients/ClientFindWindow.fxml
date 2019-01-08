@@ -40,7 +40,8 @@
       </Label>
       <ComboBox fx:id="departureComboBox" layoutX="225.0" layoutY="78.0" onAction="#departure" prefWidth="150.0" />
       <ComboBox fx:id="arrivalComboBox" layoutX="225.0" layoutY="168.0" onAction="#arrival" prefWidth="150.0" />
-      <Button fx:id="findButton" layoutX="275.0" layoutY="323.0" mnemonicParsing="false" onAction="#find" text="Szukaj" />
+      <Button fx:id="findButton" layoutX="275.0" layoutY="301.0" mnemonicParsing="false" onAction="#find" text="Szukaj" />
       <DatePicker fx:id="datePicker" layoutX="213.0" layoutY="258.0" onAction="#date" />
+      <Label fx:id="infoLabel" layoutX="233.0" layoutY="340.0" prefHeight="18.0" prefWidth="133.0" visible="false" />
    </children>
 </AnchorPane>

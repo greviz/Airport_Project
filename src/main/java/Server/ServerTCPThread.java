@@ -57,6 +57,14 @@ public class ServerTCPThread extends Thread {
 						System.out.println("SEND (" + mySocket.getPort() + ") FALSE");
 					}
 					break;
+				}if (object instanceof Users) {
+
+					if (sendUsers(mySocket)) {
+						System.out.println("SEND (" + mySocket.getPort() + ") OK");
+					} else {
+						System.out.println("SEND (" + mySocket.getPort() + ") FALSE");
+					}
+					break;
 				}
 				if (object instanceof Flights) {
 
@@ -76,6 +84,16 @@ public class ServerTCPThread extends Thread {
 					}
 					break;
 				}
+				if (object instanceof Planes) {
+
+					if (sendPlanes(mySocket)) {
+						System.out.println("SEND (" + mySocket.getPort() + ") OK");
+					} else {
+						System.out.println("SEND (" + mySocket.getPort() + ") FALSE");
+					}
+					break;
+				}
+
 				if (object instanceof Ticket) {
 
 					if (sendTicket(mySocket,object)) {
@@ -99,6 +117,32 @@ public class ServerTCPThread extends Thread {
 			return false;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+		}
+		return true;
+	}
+
+	private boolean sendUsers(Socket mySocket) {
+		try {
+			Users x = JDBC.getUsers();
+			ObjectOutputStream out = new ObjectOutputStream(mySocket.getOutputStream());
+			out.writeObject(x);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	private boolean sendPlanes(Socket mySocket) {
+		try {
+			Planes x = JDBC.getPlanes();
+			ObjectOutputStream out = new ObjectOutputStream(mySocket.getOutputStream());
+			out.writeObject(x);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
 		}
 		return true;
 	}

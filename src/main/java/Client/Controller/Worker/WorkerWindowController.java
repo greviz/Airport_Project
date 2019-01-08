@@ -23,6 +23,8 @@ public class WorkerWindowController {
 	Button cancelButton;
 	@FXML
 	Button logoutButton;
+	@FXML
+	Button airport;
 	
 	@FXML
 	Label clockLabel;
@@ -45,9 +47,41 @@ public class WorkerWindowController {
 		}
 		WorkerAddWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
+		mainController.setScreen(pane);
+	}
+	@FXML
+	public void addPlane(){
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(this.getClass().getResource("/Worker/WorkerAddPlaneWindow.fxml"));
+		AnchorPane pane = null;
+		try {
+			pane = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		WorkerAddPlaneWindowController ctrl = loader.getController();
+		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
 		mainController.setScreen(pane);
 	}
 
+	@FXML
+	public void addAirport(){
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(this.getClass().getResource("/Worker/WorkerAddAirportWindow.fxml"));
+		AnchorPane pane = null;
+		try {
+			pane = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		WorkerAddAirportWindowController ctrl = loader.getController();
+		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		mainController.setScreen(pane);
+	}
 	@FXML
 	public void edit(){
 		FXMLLoader loader = new FXMLLoader();
@@ -60,6 +94,8 @@ public class WorkerWindowController {
 		}
 		WorkerEditWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
 	@FXML
@@ -74,6 +110,8 @@ public class WorkerWindowController {
 		}
 		WorkerCancelWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
 

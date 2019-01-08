@@ -6,7 +6,26 @@ public class User implements Serializable {
 
 	private int id;
 	private String login;
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	private String password;
+	private String firstName;
+	private String lastName;
 	private int idKlienta;
 	private int idTechnical;
 	private int idWorker;
@@ -20,7 +39,16 @@ public class User implements Serializable {
 		this.login = login;
 		this.password = pass;
 	}
-
+	public User(int id, String idKlienta, String idTechnical, String idWorker, String idAdmin, String firstName,String lastName) {
+		super();
+		this.id = id;
+		this.idKlienta = Integer.parseInt(idKlienta);
+		this.idTechnical = Integer.parseInt(idTechnical);
+		this.idWorker = Integer.parseInt(idWorker);
+		this.idAdmin = Integer.parseInt(idAdmin);
+		this.firstName= firstName;
+		this.lastName= lastName;
+	}
 
 	public User(String id, String login, String password, String idKlienta, String idTechnical, String idWorker,
 			String idAdmin) {
