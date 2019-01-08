@@ -43,6 +43,8 @@ public class AdminWindowController {
 		}
 		AdminGiveWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
 

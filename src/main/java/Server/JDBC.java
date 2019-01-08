@@ -272,4 +272,8 @@ public class JDBC {
 		}
 		return users;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> dd6a07712d5ea5cdc5ac8f88060d559fd54128eb

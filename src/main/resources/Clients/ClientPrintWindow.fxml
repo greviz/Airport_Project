@@ -29,5 +29,6 @@
          </font>
       </Label>
       <Button fx:id="printButton" layoutX="274.0" layoutY="158.0" mnemonicParsing="false" onAction="#print" text="Drukuj" />
+      <Label fx:id="infoLabel" layoutX="286.0" layoutY="216.0" visible="false" />
    </children>
 </AnchorPane>

@@ -44,6 +44,8 @@ public class TechnicalWindowController {
 		}
 		TechnicalCheckWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
 
@@ -59,6 +61,8 @@ public class TechnicalWindowController {
 		}
 		TechnicalOrderWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
 	@FXML
@@ -73,6 +77,8 @@ public class TechnicalWindowController {
 		}
 		TechnicalEnterWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
 

@@ -37,20 +37,20 @@ public class ClientFindWindowController {
 	DatePicker datePicker;
 	@FXML
 	Button findButton;
+	@FXML
+	Label infoLabel;
 
 	private Client client;
 	private Flights flights;
 	private Airports airport;
 	public void addValues()
 	{
-
 		flights = client.getFligts();
 		airport = client.getAirports();
 		for(int i =0;i<airport.size();i++) {
 			departureComboBox.getItems().add(airport.get(i).getCity());
 			arrivalComboBox.getItems().add(airport.get(i).getCity());
 		}
-
 	}
 	@FXML
 	public void find() {
@@ -67,43 +67,43 @@ public class ClientFindWindowController {
 		String arrival = (String) arrivalComboBox.getValue();
 		String departure = (String) departureComboBox.getValue();
 		LocalDate date = datePicker.getValue();
-
-		int arrId=0,depId=0;
-		int y = 0;
-		for(int i =0;i<airport.size();i++)
+		if(arrival == null || departure == null || date ==null)
 		{
-			if(airport.get(i).getCity().equals(departure))
-			{
-				depId=airport.get(i).getAirportId();
-			}
-			if(airport.get(i).getCity().equals(arrival))
-			{
-				arrId=airport.get(i).getAirportId();
-			}
-
+			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setVisible(true);
 		}
-		for(int i =0;i<flights.size();i++)
-		{
-			String temp = flights.get(i).getFlightDate();
-			char [] arr = new char[10];
-			temp.getChars(0,10,arr,0);
-			String d = new String(arr);
-			if(flights.get(i).getDepartureAirportId() == depId && flights.get(i).getArrivalAirportId() == arrId && d.equals(date.toString()))
-			{
-				Label l1 = new Label("Znaleziono lot nr " +  ++y + " wylot z " + departure + " przylot do " + arrival +
-						" \nData i czas wylotu " + temp + " cena biletu " +flights.get(i).getTicketPrice());
-                l1.setLayoutY(y*35 + 20);
-				l1.setLayoutX(30);
-				pane.getChildren().add(l1);
+		else {
+			int arrId = 0, depId = 0;
+			int y = 0;
+			for (int i = 0; i < airport.size(); i++) {
+				if (airport.get(i).getCity().equals(departure)) {
+					depId = airport.get(i).getAirportId();
+				}
+				if (airport.get(i).getCity().equals(arrival)) {
+					arrId = airport.get(i).getAirportId();
+				}
 			}
-		}
-		Label l = new Label();
-		l.setLayoutX(30);
-		l.setLayoutY(20);
-		l.setText("Poszukiwany lot z " +departure +" do " + arrival + " dnia " + date);
+			for (int i = 0; i < flights.size(); i++) {
+				String temp = flights.get(i).getFlightDate();
+				char[] arr = new char[10];
+				temp.getChars(0, 10, arr, 0);
+				String d = new String(arr);
+				if (flights.get(i).getDepartureAirportId() == depId && flights.get(i).getArrivalAirportId() == arrId && d.equals(date.toString())) {
+					Label l1 = new Label("Znaleziono lot nr " + ++y + " wylot z " + departure + " przylot do " + arrival +
+							" \nData i czas wylotu " + temp + " cena biletu " + flights.get(i).getTicketPrice());
+					l1.setLayoutY(y * 35 + 20);
+					l1.setLayoutX(30);
+					pane.getChildren().add(l1);
+				}
+			}
+			Label l = new Label();
+			l.setLayoutX(30);
+			l.setLayoutY(20);
+			l.setText("Poszukiwany lot z " + departure + " do " + arrival + " dnia " + date);
 
-		pane.getChildren().add(l);
-		stg.show();
+			pane.getChildren().add(l);
+			stg.show();
+		}
 	}
 	@FXML
 	public void initialize() {

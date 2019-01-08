@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import oracle.sql.DATE;
 
 import javax.swing.event.CaretListener;
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -93,15 +94,19 @@ public class ClientBuyWindowController {
 
 			try {
 				row = Integer.parseInt(rowTextField.getText());
-
 				if (row > rowNr) {
-					throw new Exception();
+					throw new Exception("Rz¹d musi byæ liczb¹ mniejsza niz " + rowNr);
 				}
+				if(!client.getString("SELECT ID_BILETU FROM BILET WHERE RZAD LIKE " + row + " AND TYP_MIEJSCA LIKE '" + seat + "' AND ID_LOTU LIKE "+flightId).equals("-1"))
+				{
+					throw new Exception("To miejsce jest zajête");
+				}
+
 				client.getString("INSERT INTO BILET VALUES (" + ticketId + "," + ticketPrice + "," + row + ",'" + seat + "'," +
 						client.getU().getIdKlienta() + "," + flightId + ")");
-				infoLabel.setText("Wykonano zakup");
+				infoLabel.setText("Wykonano zakup. Twoje id biletu:" + ticketId);
 			} catch (Exception e) {
-				infoLabel.setText("Rz¹d musi byæ liczb¹ mniejsza niz " + rowNr);
+				infoLabel.setText(e.getMessage());
 			}
 		}
 		infoLabel.setVisible(true);

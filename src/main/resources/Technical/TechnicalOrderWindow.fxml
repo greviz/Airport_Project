@@ -19,29 +19,30 @@
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label layoutX="262.0" layoutY="66.0" text="Zleć naprawę">
+      <Label layoutX="261.0" layoutY="48.0" text="Zleć naprawę">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ComboBox fx:id="planeComboBox" layoutX="280.0" layoutY="115.0" onAction="#plane" prefWidth="150.0" />
-      <Label layoutX="84.0" layoutY="119.0" text="Wybierz samolot">
+      <ComboBox fx:id="planeComboBox" layoutX="279.0" layoutY="93.0" onAction="#plane" prefWidth="150.0" />
+      <Label layoutX="84.0" layoutY="97.0" text="Wybierz samolot">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker fx:id="datePicker" layoutX="274.0" layoutY="187.0" onAction="#date" />
-      <Label layoutX="52.0" layoutY="191.0" text="Termin ukończenia naprawy">
+      <DatePicker fx:id="datePicker" layoutX="274.0" layoutY="145.0" onAction="#date" />
+      <Label layoutX="52.0" layoutY="149.0" text="Termin ukończenia naprawy">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="confirmButton" layoutX="274.0" layoutY="337.0" mnemonicParsing="false" onAction="#confirm" text="Potwierdź" />
-      <Label layoutX="76.0" layoutY="266.0" prefHeight="18.0" prefWidth="112.0" text="Szczegóły zlecenia">
+      <Button fx:id="confirmButton" layoutX="273.0" layoutY="293.0" mnemonicParsing="false" onAction="#confirm" text="Potwierdź" />
+      <Label layoutX="76.0" layoutY="221.0" prefHeight="18.0" prefWidth="112.0" text="Szczegóły zlecenia">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea fx:id="orderTextArea" layoutX="226.0" layoutY="240.0" prefHeight="70.0" prefWidth="270.0" />
+      <TextArea fx:id="orderTextArea" layoutX="226.0" layoutY="195.0" prefHeight="70.0" prefWidth="270.0" />
+      <Label fx:id="infoLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="340.0" prefHeight="18.0" prefWidth="174.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

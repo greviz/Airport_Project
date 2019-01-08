@@ -15,13 +15,14 @@ public class Client {
 	Socket mySocket;
 	String temp;
     Selects res;
+    private Users users;
 	private User u;
 	private Flights flight;
 	private Airports airport;
 	private Ticket ticket;
-
+	private Planes plane;
 	public void Connect() throws IOException {
-		int port = 3613;
+		int port = 3614;
 		mySocket = new Socket("127.0.0.1", port);
 	}
 
@@ -81,7 +82,6 @@ public class Client {
 	public User getUser(User u)
 	{
 		sendObject(new User(u));
-
 		while (true) {
 			Object object = getObject();
 			if (object instanceof User) {
@@ -92,6 +92,18 @@ public class Client {
 		}
 		return u;
 	}
+	public Users getUsers() {
+		sendObject(new Users());
+		while (true) {
+			Object object = getObject();
+			if (object instanceof Users) {
+				users = (Users) object;
+				break;
+			}
+		}
+		return users;
+	}
+
 	public String getString(String statment)
 	{
 		sendObject(new String(statment));
@@ -186,4 +198,19 @@ public class Client {
         }
         return res;
     }
+
+    public Planes getPlanes() {
+		sendObject(new Planes());
+
+		while (true) {
+			Object object = getObject();
+			if (object instanceof Planes) {
+				plane = (Planes) object;
+				break;
+			}
+		}
+		return plane;
+	}
+
+
 }

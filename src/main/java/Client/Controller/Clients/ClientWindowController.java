@@ -97,6 +97,7 @@ public class ClientWindowController {
 			e.printStackTrace();
 		}
 		ClientPrintWindowController ctrl = loader.getController();
+		ctrl.setClient(client);
 		ctrl.setMainController(mainController);
 		mainController.setScreen(pane);
 	}
