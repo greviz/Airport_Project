@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Clients.ClientCheckWindowController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../wrightelectric.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="26.0" layoutY="349.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
+      <Label layoutX="251.0" layoutY="40.0" text="Sprawdź bilet">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
+      <TextField fx:id="checkTextField" layoutX="348.0" layoutY="101.0" />
+      <Label layoutX="113.0" layoutY="105.0" text="Wprowadź numer biletu">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="checkButton" layoutX="268.0" layoutY="149.0" mnemonicParsing="false" onAction="#check" text="Sprawdź" />
+      <Label fx:id="infoLabel" layoutX="222.0" layoutY="200.0" text="Numer biletu musi być liczbą" visible="false" />
+   </children>
+</AnchorPane>

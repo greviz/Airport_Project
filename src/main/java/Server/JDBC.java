@@ -1,4 +1,4 @@
-package Server;
+ï»¿package Server;
 
 import Data.*;
 
@@ -21,15 +21,15 @@ public class JDBC {
 	}
 
 	public static void closeConnection() {
-		System.out.print("\nZamykanie polaczenia z baz¹:");
+		System.out.print("\nZamykanie polaczenia z bazÂ¹:");
 		try {
 			st.close();
 			con.close();
 		} catch (SQLException e) {
-			System.out.println("Bl¹d przy zamykaniu pol¹czenia z baz¹! " + e.getMessage() + ": " + e.getErrorCode());
+			System.out.println("BlÂ¹d przy zamykaniu polÂ¹czenia z bazÂ¹! " + e.getMessage() + ": " + e.getErrorCode());
 			System.exit(4);
 		}
-		System.out.print(" zamkniêcie OK");
+		System.out.print(" zamkniÃªcie OK");
 	}
 
 	public static String getString(String statment) {
@@ -92,7 +92,7 @@ public class JDBC {
 			}
 
 		} catch (SQLException e) {
-			System.out.println("Bl¹d odczytu z bazy! " + e.getMessage() + ": " + e.getErrorCode());
+			System.out.println("BlÂ¹d odczytu z bazy! " + e.getMessage() + ": " + e.getErrorCode());
 		}
 		return user;
 	}
@@ -202,5 +202,74 @@ public class JDBC {
 			e.printStackTrace();
 		}
 		return t;
+	}
+
+    public static Planes getPlanes() {
+		String sql;
+		sql = "SELECT * FROM SAMOLOT";
+		try {
+			res = st.executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		Planes planes = new Planes();
+		try {
+			while (res.next()) {
+
+				int planeId = res.getInt(1);
+				String name=res.getString(2);
+				String model=res.getString(3);
+				int seats = res.getInt(4);
+				Plane p = new Plane(planeId,name,model,seats);
+				planes.add(p);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return planes;
+    }
+
+	public static Users getUsers() {
+		String sql;
+		sql = "SELECT ID_UZYTKOWNIKA, ID_KLIENTA, ID_PRAC_ADM, ID_ADMINISTRATORA, ID_PRAC_TECH,IMIE,NAZWISKO FROM UZYTKOWNIK";
+		try {
+			res = st.executeQuery(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		Users users = new Users();
+		try {
+			while (res.next()) {
+				Object id = res.getObject(1);
+				Object idKlienta = res.getObject(2);
+				Object idWorker = res.getObject(3);
+				Object idAdmin = res.getObject(4);
+				Object idTechnical = res.getObject(5);
+				String firstName = res.getString(6);
+				String lastName = res.getString(7);
+
+				if (id == null) {
+					id = "-1";
+				}
+				if (idKlienta == null) {
+					idKlienta = "-1";
+				}
+				if (idAdmin == null) {
+					idAdmin = "-1";
+				}
+				if (idTechnical == null) {
+					idTechnical = "-1";
+				}
+				if (idWorker == null) {
+					idWorker = "-1";
+				}
+
+				User u = new User(Integer.parseInt(id.toString()),idKlienta.toString(),idTechnical.toString(),idWorker.toString(),idAdmin.toString(),firstName,lastName);
+				users.add(u);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return users;
 	}
 }

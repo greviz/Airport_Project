@@ -70,12 +70,12 @@ public class RegisterWindowController {
 
 		if (temp != -1) {
 			infoLabel.setVisible(true);
-			infoLabel.setText("Rejestracja zakoÒczona niepowodzeniem");
+			infoLabel.setText("Rejestracja zako≈Ñczona niepowodzeniem");
 		} else if (login.length() == 0 || pass.length() == 0 || firstName.length() == 0 || lastName.length() == 0
 				|| country.length() == 0 || city.length() == 0 || street.length() == 0 || pesel.length() == 0
 				|| houseNr.length() == 0) {
 			infoLabel.setVisible(true);
-			infoLabel.setText("Uzupe≥nij wszystkie pola");
+			infoLabel.setText("Uzupe≈Çnij wszystkie pola");
 		} else {
 
 			int clientId = 0;
@@ -103,7 +103,7 @@ public class RegisterWindowController {
 
 
 			infoLabel.setVisible(true);
-			infoLabel.setText("Rejestracja zakoÒczona sukcesem");
+			infoLabel.setText("Rejestracja zako≈Ñczona sukcesem");
 		}
 	}
 
