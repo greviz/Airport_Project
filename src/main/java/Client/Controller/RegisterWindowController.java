@@ -51,6 +51,8 @@ public class RegisterWindowController {
 		(new Display(clockLabel)).start();
 	}
 
+
+
 	@FXML
 	public void register() {
 		String login = loginTextField.getText();

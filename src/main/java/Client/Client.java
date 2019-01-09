@@ -7,6 +7,9 @@ import java.net.Socket;
 import java.sql.ResultSet;
 import java.util.concurrent.Callable;
 
+import Client.Language.EngLang;
+import Client.Language.Language;
+import Client.Language.PolLang;
 import Data.*;
 
 
@@ -15,6 +18,7 @@ public class Client {
 	Socket mySocket;
 	String temp;
     Selects res;
+    private Language lang ;
     private Users users;
 	private User u;
 	private Flights flight;
@@ -26,6 +30,21 @@ public class Client {
 		mySocket = new Socket("127.0.0.1", port);
 	}
 
+	public void setLanguage(String name) {
+		if(name == "ENG"){
+			this.lang = new EngLang();
+		}
+		else if (name == "POL")
+		{
+			this.lang = new PolLang();
+		}
+
+	}
+
+	public Language getLanguage()
+	{
+		return this.lang;
+	}
 
 	public User getU() {
 		return u;

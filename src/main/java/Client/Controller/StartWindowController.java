@@ -34,13 +34,28 @@ public class StartWindowController {
 	@FXML
 	Button registerButton;
 	@FXML
+	Button polishButton;
+	@FXML
+	Button englishButton;
+	@FXML
 	Label clockLabel;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label noacc;
+	@FXML
+	Label passwdLbl;
 
 	@FXML
 	public void initialize() {
+
 		(new Display(clockLabel)).start();
+
+	}
+
+
+	public void init(){
+
 	}
 
 	@FXML
@@ -51,7 +66,7 @@ public class StartWindowController {
 		User u = new User(login, pass);
 		u = client.getUser(u);
 		if (u.getId() == -1) {
-			infoLabel.setText("Logowanie nie powiod?o si?");
+			infoLabel.setText(client.getLanguage().get("Login_fail"));
 			infoLabel.setVisible(true);
 		}
 		else if (u.getIdKlienta() != -1) {
@@ -80,6 +95,28 @@ public class StartWindowController {
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
 		mainController.setScreen(pane);
+	}
+
+
+
+	@FXML
+	public void polish()
+	{
+		client.setLanguage("POL");
+		loginButton.setText(client.getLanguage().get("Login_button"));
+		registerButton.setText(client.getLanguage().get("Register_button"));
+		noacc.setText(client.getLanguage().get("No_Acc"));
+		passwdLbl.setText(client.getLanguage().get("Passwd_Label"));
+	}
+
+	@FXML
+	public void english(){
+		client.setLanguage("ENG");
+		loginButton.setText(client.getLanguage().get("Login_button"));
+		registerButton.setText(client.getLanguage().get("Register_button"));
+		noacc.setText(client.getLanguage().get("No_Acc"));
+		passwdLbl.setText(client.getLanguage().get("Passwd_Label"));
+
 	}
 
 	public void setMainController(MainScreenController mainController) {
