@@ -52,12 +52,12 @@ public class ClientPrintWindowController {
 			}
 			else
 			{
-				infoLabel.setText("WprowadŸ prawid³owy numer biletu");
+				infoLabel.setText("Wprowad? prawid?owy numer biletu");
 			}
 			infoLabel.setVisible(true);
 		}catch (Exception e)
 		{
-			infoLabel.setText("Numer biletu musi byæ liczb¹");
+			infoLabel.setText("Numer biletu musi by? liczb?");
 			infoLabel.setVisible(true);
 		}
 

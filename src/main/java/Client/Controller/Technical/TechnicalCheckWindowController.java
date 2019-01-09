@@ -46,12 +46,12 @@ public class TechnicalCheckWindowController {
 		try {
 			plane = (String) planeComboBox.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		} else {
 
@@ -80,12 +80,12 @@ public class TechnicalCheckWindowController {
 		try {
 			plane = (String) planeComboBox.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		} else {
 
@@ -114,12 +114,12 @@ public class TechnicalCheckWindowController {
 		try {
 			plane = (String) planeComboBox.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		} else {
 

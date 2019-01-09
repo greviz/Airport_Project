@@ -23,9 +23,11 @@
          </font>
       </Label>
       <ComboBox fx:id="workerComboBox" layoutX="235.0" layoutY="119.0" onAction="#workerChoice" prefWidth="150.0" />
-      <Label fx:id="clockLabel1" layoutX="71.0" layoutY="123.0" text="Wybierz pracownika" />
-      <Label fx:id="clockLabel11" layoutX="69.0" layoutY="201.0" text="Wybierz uprawnienia" />
-      <Button fx:id="confirmButton" layoutX="276.0" layoutY="255.0" mnemonicParsing="false" onAction="#confirm" text="Potwierdź" />
-      <ComboBox fx:id="permitComboBox" layoutX="235.0" layoutY="197.0" onAction="#permitChoice" prefWidth="150.0" />
+      <Label fx:id="clockLabel1" layoutX="71.0" layoutY="123.0" text="Wybierz użytkownika" />
+      <Button fx:id="clientButton" layoutX="230.0" layoutY="174.0" mnemonicParsing="false" onAction="#client" text="Zmień na konto typu klient" />
+      <Button fx:id="technicalButton" layoutX="188.0" layoutY="257.0" mnemonicParsing="false" onAction="#technical" text="Zmień na konto typu pracownik techniczny" />
+      <Button fx:id="workerButton" layoutX="175.0" layoutY="301.0" mnemonicParsing="false" onAction="#worker" text="Zmień na konto typu pracownik administracyjny" />
+      <Button fx:id="adminButton" layoutX="210.0" layoutY="216.0" mnemonicParsing="false" onAction="#admin" text="Zmień na konto typu administrator" />
+      <Label fx:id="infoLabel" alignment="CENTER" layoutX="142.0" layoutY="353.0" prefHeight="18.0" prefWidth="334.0" textAlignment="CENTER" visible="false" />
    </children>
 </AnchorPane>

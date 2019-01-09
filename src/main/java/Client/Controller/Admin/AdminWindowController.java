@@ -60,6 +60,8 @@ public class AdminWindowController {
 		}
 		AdminDetermineWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
 

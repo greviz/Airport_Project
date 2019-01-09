@@ -95,11 +95,11 @@ public class ClientBuyWindowController {
 			try {
 				row = Integer.parseInt(rowTextField.getText());
 				if (row > rowNr) {
-					throw new Exception("Rz¹d musi byæ liczb¹ mniejsza niz " + rowNr);
+					throw new Exception("RzÄ…d musi byÄ‡ liczbÄ… mniejsza niz " + rowNr);
 				}
 				if(!client.getString("SELECT ID_BILETU FROM BILET WHERE RZAD LIKE " + row + " AND TYP_MIEJSCA LIKE '" + seat + "' AND ID_LOTU LIKE "+flightId).equals("-1"))
 				{
-					throw new Exception("To miejsce jest zajête");
+					throw new Exception("To miejsce jest zajÄ™te");
 				}
 
 				client.getString("INSERT INTO BILET VALUES (" + ticketId + "," + ticketPrice + "," + row + ",'" + seat + "'," +

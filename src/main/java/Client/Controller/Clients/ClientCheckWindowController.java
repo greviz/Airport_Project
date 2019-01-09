@@ -47,12 +47,12 @@ public class ClientCheckWindowController {
 			}
 			else
 			{
-				infoLabel.setText("WprowadŸ prawid³owy numer biletu");
+				infoLabel.setText("WprowadÅº prawidÅ‚owy numer biletu");
 			}
 			infoLabel.setVisible(true);
 		}catch (Exception e)
 		{
-			infoLabel.setText("Numer biletu musi byæ liczb¹");
+			infoLabel.setText("Numer biletu musi byÄ‡ liczbÄ…");
 			infoLabel.setVisible(true);
 		}
 

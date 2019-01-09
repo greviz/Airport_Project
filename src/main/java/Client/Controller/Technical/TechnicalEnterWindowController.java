@@ -49,12 +49,12 @@ public class TechnicalEnterWindowController {
 			plane = (String) planeComboBox.getValue();
 			datePick = datePicker.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		} else {
 
@@ -73,7 +73,7 @@ public class TechnicalEnterWindowController {
 					+planeId+" AND DATA_LOTU LIKE TO_DATE('"+ datePick +"','YYYY-MM-DD'))");
 			client.getString("DELETE FROM LOT WHERE ID_SAMOLOTU LIKE " + planeId +" AND DATA_LOTU LIKE TO_DATE('"+ datePick +"','YYYY-MM-DD')");
 			client.getString("UPDATE SAMOLOT SET przeglad_okresowy = '"+datePick+"' WHERE ID_SAMOLOTU LIKE " + planeId);
-			infoLabel.setText("Wprowadzono termin przegl¹du");
+			infoLabel.setText("Wprowadzono termin przegl?du");
 			infoLabel.setVisible(true);
 
 

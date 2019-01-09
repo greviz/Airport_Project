@@ -110,7 +110,7 @@ public class WorkerCancelWindowController {
 		client.getString("DELETE FROM BILET WHERE ID_LOTU ="+flightId);
 		client.getString("DELETE FROM LOT WHERE ID_LOTU ="+flightId);
 		infoLabel.setVisible(true);
-		infoLabel.setText("Usuniêto lot o id " + flightId);
+		infoLabel.setText("UsuniÄ™to lot o id " + flightId);
 	}
 	@FXML
 	public void back() {

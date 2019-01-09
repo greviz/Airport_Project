@@ -65,12 +65,12 @@ public class TechnicalOrderWindowController {
 			plane = (String) planeComboBox.getValue();
 			order = orderTextArea.getText();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null || order.trim().isEmpty() || datePick == null) {
-			infoLabel.setText("Uzupe³nij wszystkie pola");
+			infoLabel.setText("Uzupe?nij wszystkie pola");
 			infoLabel.setVisible(true);
 		} else {
 

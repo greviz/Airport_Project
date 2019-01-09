@@ -51,12 +51,12 @@ public void add() {
                 numOfSeats = Integer.parseInt(seatsNum.getText());
         }catch(Exception e)
         {
-                infoLabel.setText("Uzupe≥nij wszystkie pola");
+                infoLabel.setText("Uzupe≈Çnij wszystkie pola");
                 infoLabel.setVisible(true);
         }
         if(name.length()==0 || model.length()==0 || numOfSeats == null)
         {
-                infoLabel.setText("Uzupe≥nij wszystkie pola");
+                infoLabel.setText("Uzupe≈Çnij wszystkie pola");
                 infoLabel.setVisible(true);
         }
         else

@@ -27,6 +27,7 @@
       <Label fx:id="clockLabel1" layoutX="61.0" layoutY="113.0" text="Wybierz pracownika" />
       <TextField fx:id="salaryTextField" layoutX="225.0" layoutY="187.0" />
       <Label fx:id="clockLabel11" layoutX="67.0" layoutY="191.0" text="Wprowadź pensję" />
-      <Button fx:id="confirmButton" layoutX="274.0" layoutY="245.0" mnemonicParsing="false" onAction="#confirm" text="Button" />
+      <Button fx:id="confirmButton" layoutX="265.0" layoutY="246.0" mnemonicParsing="false" onAction="#confirm" text="Potwierdź" />
+      <Label fx:id="infoLabel" alignment="CENTER" layoutX="209.0" layoutY="303.0" prefHeight="18.0" prefWidth="181.0" visible="false" />
    </children>
 </AnchorPane>

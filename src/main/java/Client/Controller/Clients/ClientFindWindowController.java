@@ -69,7 +69,7 @@ public class ClientFindWindowController {
 		LocalDate date = datePicker.getValue();
 		if(arrival == null || departure == null || date ==null)
 		{
-			infoLabel.setText("Uzupe≥nij wszystkie pola");
+			infoLabel.setText("Uzupe≈Çnij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 		else {

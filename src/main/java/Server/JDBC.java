@@ -12,7 +12,6 @@ public class JDBC {
 
 	public static void connectToDB() {
 		try {
-			System.out.println("driver");
 			con = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-E0K593V:1521:oracl", "lot", "lot");
 			st = con.createStatement();
 		} catch (SQLException e) {
@@ -23,8 +22,6 @@ public class JDBC {
 
 	public static void closeConnection() {
 		System.out.print("\nZamykanie polaczenia z baz?:");
-		System.out.print("Close");
-
 		try {
 			st.close();
 			con.close();
@@ -41,7 +38,9 @@ public class JDBC {
 		try {
 			res = st.executeQuery(statment);
 			if (res.next() != false) {
-				x = res.getString(1);
+				if(res.getString(1)!=null) {
+					x = res.getString(1);
+				}
 			}
 		} catch (Exception wyjatek) {
 			System.out.println(wyjatek.getMessage());

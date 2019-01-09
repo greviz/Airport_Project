@@ -90,13 +90,13 @@ public class WorkerAddWindowController {
  			price = Integer.parseInt(priceTextField.getText());
 		}catch(Exception e)
 		{
-			infoLabel.setText("Uzupe≥nij wszystkie pola");
+			infoLabel.setText("Uzupe≈Çnij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 
 		if(arrival == null || departure == null || plane == null  || price == 0|| datePick.length()==0)
 		{
-			infoLabel.setText("Uzupe≥nij wszystkie pola");
+			infoLabel.setText("Uzupe≈Çnij wszystkie pola");
 			infoLabel.setVisible(true);
 		}
 		else
