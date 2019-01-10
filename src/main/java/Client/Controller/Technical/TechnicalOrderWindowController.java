@@ -34,8 +34,26 @@ public class TechnicalOrderWindowController {
 	TextArea orderTextArea;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label title;
+	@FXML
+	Label pplane;
+	@FXML
+	Label fixdate;
+	@FXML
+	Label details;
 	private Client client;
 	private Planes plane;
+
+	public void setLanguage() {
+		backButton.setText(client.getLanguage().get("Back_button"));
+		confirmButton.setText(client.getLanguage().get("Confirm_button"));
+		title.setText(client.getLanguage().get("T_fix"));
+		pplane.setText(client.getLanguage().get("T_plane"));
+		fixdate.setText(client.getLanguage().get("Tf_fixdate"));
+		details.setText(client.getLanguage().get("Tf_details"));
+	}
+
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
@@ -65,12 +83,12 @@ public class TechnicalOrderWindowController {
 			plane = (String) planeComboBox.getValue();
 			order = orderTextArea.getText();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null || order.trim().isEmpty() || datePick == null) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		} else {
 
@@ -89,7 +107,7 @@ public class TechnicalOrderWindowController {
 			client.getString("DELETE FROM LOT WHERE ID_SAMOLOTU LIKE " + planeId +" AND DATA_LOTU > '"+ LocalDate.now()+ "' AND DATA_LOTU < '" + datePick + "'");
 			client.getString("INSERT INTO NAPRAWA VALUES(" + repairId +",'"+LocalDate.now()+"','"+datePick+"','"+order+"',"+planeId+")");
 			client.getString("UPDATE SAMOLOT SET stan_techniczny ='niesprawny' WHERE ID_SAMOLOTU LIKE "+planeId);
-			infoLabel.setText("Dodano zlecenie");
+			infoLabel.setText(client.getLanguage().get("Tfix_0"));
 			infoLabel.setVisible(true);
 
 

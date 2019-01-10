@@ -46,9 +46,34 @@ public class ClientBuyWindowController {
 	Label infoLabel;
 	@FXML
 	Button buyButton;
+	@FXML
+	Label title;
+	@FXML
+	Label departure;
+	@FXML
+	Label arrival;
+	@FXML
+	Label seat;
+	@FXML
+	Label row;
+	@FXML
+	Label date;
+
 	private Client client;
 	private Flights flights;
 	private Airports airport;
+
+	public void setLanguage(){
+		backButton.setText(client.getLanguage().get("Back_button"));
+		buyButton.setText(client.getLanguage().get("C_kupbtn"));
+		title.setText(client.getLanguage().get("Cb_title"));
+		departure.setText(client.getLanguage().get("C_departurelbl"));
+		arrival.setText(client.getLanguage().get("C_arrivallbl"));
+		date.setText(client.getLanguage().get("C_date"));
+		seat.setText(client.getLanguage().get("Cb_seatlbl"));
+		row.setText(client.getLanguage().get("Cb_rowlbl"));
+	}
+
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
@@ -68,7 +93,7 @@ public class ClientBuyWindowController {
 		{
 			arrivalComboBox.getItems().add(s.get(i).getList().get(0));
 		}
-		seatComboBox.getItems().addAll("okno","srodek","przejscie");
+		seatComboBox.getItems().addAll(client.getLanguage().get("buy_0"),client.getLanguage().get("buy_1"),client.getLanguage().get("buy_2"));
 
 	}
 	@FXML
@@ -81,7 +106,7 @@ public class ClientBuyWindowController {
 		int ticketId, ticketPrice, flightId;
 		if(arrival ==null || departure == null || date == null ||seat==null)
 		{
-			infoLabel.setText("Uzupelnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 		}
 		else {
 			ticketId = Integer.parseInt(client.getString("SELECT MAX(ID_BILETU) FROM BILET")) + 1;
@@ -95,16 +120,16 @@ public class ClientBuyWindowController {
 			try {
 				row = Integer.parseInt(rowTextField.getText());
 				if (row > rowNr) {
-					throw new Exception("Rząd musi być liczbą mniejsza niz " + rowNr);
+					throw new Exception(client.getLanguage().get("buy_3") + rowNr);
 				}
 				if(!client.getString("SELECT ID_BILETU FROM BILET WHERE RZAD LIKE " + row + " AND TYP_MIEJSCA LIKE '" + seat + "' AND ID_LOTU LIKE "+flightId).equals("-1"))
 				{
-					throw new Exception("To miejsce jest zajęte");
+					throw new Exception(client.getLanguage().get("buy_4"));
 				}
 
 				client.getString("INSERT INTO BILET VALUES (" + ticketId + "," + ticketPrice + "," + row + ",'" + seat + "'," +
 						client.getU().getIdKlienta() + "," + flightId + ")");
-				infoLabel.setText("Wykonano zakup. Twoje id biletu:" + ticketId);
+				infoLabel.setText(client.getLanguage().get("buy_5") + ticketId);
 			} catch (Exception e) {
 				infoLabel.setText(e.getMessage());
 			}
@@ -126,7 +151,7 @@ public class ClientBuyWindowController {
 	public void date() {
 		if(arrivalComboBox.getValue()==null || departureComboBox.getValue()==null)
 		{
-			infoLabel.setText("Wybierz lotnisko przylotu i wylotu!");
+			infoLabel.setText(client.getLanguage().get("buy_6"));
 			infoLabel.setVisible(true);
 		}
 		else

@@ -27,10 +27,28 @@ TextField seatsNum;
 Button addButton;
 @FXML
 Label infoLabel;
+@FXML
+Label title;
+@FXML
+Label name;
+@FXML
+Label model;
+@FXML
+Label seats;
 
 private Client client;
 private Flights flights;
 private Airports airport;
+
+public void setLanguage() {
+        backButton.setText(client.getLanguage().get("Back_button"));
+        addButton.setText(client.getLanguage().get("Add_button"));
+        name.setText(client.getLanguage().get("Wap_name"));
+        model.setText(client.getLanguage().get("Wap_model"));
+        seats.setText(client.getLanguage().get("Wap_seatcount"));
+        title.setText(client.getLanguage().get("W_plane"));
+}
+
 @FXML
 public void initialize() {
     (new Display(clockLabel)).start();
@@ -51,19 +69,19 @@ public void add() {
                 numOfSeats = Integer.parseInt(seatsNum.getText());
         }catch(Exception e)
         {
-                infoLabel.setText("Uzupełnij wszystkie pola");
+                infoLabel.setText(client.getLanguage().get("Reg_fields"));
                 infoLabel.setVisible(true);
         }
         if(name.length()==0 || model.length()==0 || numOfSeats == null)
         {
-                infoLabel.setText("Uzupełnij wszystkie pola");
+                infoLabel.setText(client.getLanguage().get("Reg_fields"));
                 infoLabel.setVisible(true);
         }
         else
         {
                 int planeId = Integer.parseInt(client.getString("SELECT MAX(ID_SAMOLOTU) FROM SAMOLOT"))+1;
                 client.getString("INSERT INTO SAMOLOT VALUES ("+planeId+",'"+name +"','"+model+"',"+numOfSeats+",'sprawny',null)");
-                infoLabel.setText("Dodano samolot id: "+ planeId);
+                infoLabel.setText(client.getLanguage().get("Wap_0")+ planeId);
         }
 }
 @FXML

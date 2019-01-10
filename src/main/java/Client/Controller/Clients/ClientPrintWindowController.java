@@ -25,7 +25,20 @@ public class ClientPrintWindowController {
 	TextField printTextField;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label ticketId;
+	@FXML
+	Label title;
 	private Client client;
+
+	public void setLanguage(){
+
+		backButton.setText(client.getLanguage().get("Back_button"));
+		title.setText(client.getLanguage().get("C_printftn"));
+		printButton.setText(client.getLanguage().get("Cp_printbtn"));
+		ticketId.setText(client.getLanguage().get("C_ticketlbl"));
+
+	}
 
 	@FXML
 	public void initialize() {

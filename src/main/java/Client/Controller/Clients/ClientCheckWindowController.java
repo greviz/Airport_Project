@@ -22,6 +22,10 @@ public class ClientCheckWindowController {
 	TextField checkTextField;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label title;
+	@FXML
+	Label ticketId;
 	private Client client;
 
 	@FXML
@@ -29,6 +33,13 @@ public class ClientCheckWindowController {
 		(new Display(clockLabel)).start();
 	}
 
+	public void setLanguage(){
+
+		backButton.setText(client.getLanguage().get("Back_button"));
+		checkButton.setText(client.getLanguage().get("Cc_checkbtn"));
+		title.setText(client.getLanguage().get("Cc_title"));
+		ticketId.setText(client.getLanguage().get("C_ticketlbl"));
+	}
 
 	@FXML
 	public void check() {
@@ -40,19 +51,19 @@ public class ClientCheckWindowController {
 			infoLabel.setVisible(false);
 			Ticket t = client.getTicket(new Ticket(id,client.getU().getIdKlienta()));
 			if(t.getId()!=-1) {
-				String temp = " Id biletu: "+t.getId() + "\n Cena: " + t.getPrice() + "\n Rzad: " + t.getRow()
-						+ "\n Typ miejsca: " + t.getType() + client.getFlightInfo(t.getIdLotu());
+				String temp = client.getLanguage().get("check_0")+t.getId() + client.getLanguage().get("check_1") + t.getPrice() + client.getLanguage().get("check_2") + t.getRow()
+						+ client.getLanguage().get("check_3") + t.getType() + client.getFlightInfo(t.getIdLotu());
 				infoLabel.setText(temp);
 
 			}
 			else
 			{
-				infoLabel.setText("Wprowadź prawidłowy numer biletu");
+				infoLabel.setText(client.getLanguage().get("check_4"));
 			}
 			infoLabel.setVisible(true);
 		}catch (Exception e)
 		{
-			infoLabel.setText("Numer biletu musi być liczbą");
+			infoLabel.setText(client.getLanguage().get("check_5"));
 			infoLabel.setVisible(true);
 		}
 

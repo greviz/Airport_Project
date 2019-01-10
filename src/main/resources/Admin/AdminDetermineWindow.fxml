@@ -18,15 +18,15 @@
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label layoutX="214.0" layoutY="41.0" text="Ustal pensję pracownika">
+      <Label fx:id="salary" layoutX="214.0" layoutY="41.0" text="Ustal pensję pracownika">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <ComboBox fx:id="workerComboBox" layoutX="225.0" layoutY="109.0" onAction="#workerChoice" prefWidth="150.0" />
-      <Label fx:id="clockLabel1" layoutX="61.0" layoutY="113.0" text="Wybierz pracownika" />
+      <Label fx:id="worker" layoutX="61.0" layoutY="113.0" text="Wybierz pracownika" />
       <TextField fx:id="salaryTextField" layoutX="225.0" layoutY="187.0" />
-      <Label fx:id="clockLabel11" layoutX="67.0" layoutY="191.0" text="Wprowadź pensję" />
+      <Label fx:id="isalary" layoutX="67.0" layoutY="191.0" text="Wprowadź pensję" />
       <Button fx:id="confirmButton" layoutX="265.0" layoutY="246.0" mnemonicParsing="false" onAction="#confirm" text="Potwierdź" />
       <Label fx:id="infoLabel" alignment="CENTER" layoutX="209.0" layoutY="303.0" prefHeight="18.0" prefWidth="181.0" visible="false" />
    </children>

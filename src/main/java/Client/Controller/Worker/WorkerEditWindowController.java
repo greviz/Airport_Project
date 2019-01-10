@@ -41,10 +41,35 @@ public class WorkerEditWindowController {
 	@FXML
 	Button editButton;
 	@FXML
-	Button flighButton;
+	Button flightButton;
+	@FXML
+	Label departure;
+	@FXML
+	Label arrival;
+	@FXML
+	Label date;
+	@FXML
+	Label price;
+
+	@FXML
+	Label title;
+	@FXML
+	Label pflight;
+
 	private Client client;
 	private int flightToEdit;
 
+	public void setLanguage() {
+		backButton.setText(client.getLanguage().get("Back_button"));
+		editButton.setText(client.getLanguage().get("Edit_button"));
+		departure.setText(client.getLanguage().get("C_departurelbl"));
+		arrival.setText(client.getLanguage().get("C_arrivallbl"));
+		date.setText(client.getLanguage().get("Waf_date"));
+		price.setText(client.getLanguage().get("Waf_price"));
+		flightButton.setText(client.getLanguage().get("Choose_button"));
+		pflight.setText(client.getLanguage().get("Wef_choose"));
+		title.setText(client.getLanguage().get("W_edit"));
+	}
 
 	@FXML
 	public void initialize() {
@@ -82,15 +107,15 @@ public class WorkerEditWindowController {
 				{
 					if(flights.get(i).getDepartureAirportId()==airports.get(j).getAirportId())
 					{
-						t1.setText(" Wylot : "+airports.get(j).getCity());
+						t1.setText(client.getLanguage().get("Wfedit_1")+airports.get(j).getCity());
 					}
 					if(flights.get(i).getArrivalAirportId()==airports.get(j).getAirportId())
 					{
-						t2.setText("\n Przylot : "+airports.get(j).getCity());
+						t2.setText(client.getLanguage().get("Wfedit_2")+airports.get(j).getCity());
 					}
 				}
-				t3.setText("\n Termin: "+flights.get(i).getFlightDate());
-				t4.setText("\n Cena : "+flights.get(i).getTicketPrice());
+				t3.setText(client.getLanguage().get("Wfedit_3")+flights.get(i).getFlightDate());
+				t4.setText(client.getLanguage().get("Wfedit_4")+flights.get(i).getTicketPrice());
 			}
 
 		}
@@ -133,13 +158,13 @@ public class WorkerEditWindowController {
 			price = Integer.parseInt(priceTextField.getText());
 		}catch(Exception e)
 		{
-			infoLabel.setText("Uzupełnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 
 		if(arrival == null || departure == null || price == 0|| datePick.length()==0)
 		{
-			infoLabel.setText("Uzupełnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 		else
@@ -163,10 +188,10 @@ public class WorkerEditWindowController {
 				client.getString("UPDATE LOT SET ID_LOTNISKA_WYLOTU=" + depId + ",ID_LOTNISKA_PRZYLOTU=" +arrId + " ,CENA_BILETU=" + price +
 						",DATA_LOTU=TO_DATE('"+datePick+"','dd-mm-yyyy hh24:mi') WHERE ID_LOTU LIKE "+flightToEdit);
 
-				infoLabel.setText("Edytowano lot");
+				infoLabel.setText(client.getLanguage().get("Wfedit_0"));
 				infoLabel.setVisible(true);
 			} catch (ParseException e) {
-				infoLabel.setText("Niepoprawny format");
+				infoLabel.setText(client.getLanguage().get("Wfadd_2"));
 				infoLabel.setVisible(true);
 			}
 

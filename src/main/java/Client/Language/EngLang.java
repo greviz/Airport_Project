@@ -1,6 +1,5 @@
 package Client.Language;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,6 +15,7 @@ public class EngLang extends Language {
     public Map<String, String> createMap() {
         Map<String,String> map = new HashMap<String, String>();
 
+        //start window
         map.put("Lang_Name", "English");
         map.put("Title","System wspomagania lotniska");
         map.put("Login_fail","Login failed");
@@ -24,6 +24,7 @@ public class EngLang extends Language {
         map.put("No_Acc","Don't have account yet?");
         map.put("Passwd_Label","Password");
 
+        //buttony
         map.put("Back_button","Back");
         map.put("Logoff_button","Logout");
         map.put("Add_button","Add");
@@ -32,6 +33,7 @@ public class EngLang extends Language {
         map.put("Delete_button","Delete");
         map.put("Confirm_button","Confirm");
 
+        //rejestracja
         map.put("Reg_passwd","Password *");
         map.put("Reg_name","Name *");
         map.put("Reg_surename","Surename *");
@@ -46,9 +48,7 @@ public class EngLang extends Language {
         map.put("Reg_info","Fields marked with * are mandatory");
         map.put("Reg_regsucc","Signed up succesfully!");
         map.put("Reg_regfail","Singing up failed");
-
         map.put("Reg_fields","Fill all the fields!");
-
 
         //client window
         map.put("C_title","Choose an option");
@@ -88,6 +88,21 @@ public class EngLang extends Language {
         map.put("flight_7"," to ");
         map.put("flight_8"," day ");
 
+        map.put("buy_0","window");
+        map.put("buy_1","middle");
+        map.put("buy_2","hallway");
+        map.put("buy_3","Row must be a numer lesser than ");
+        map.put("buy_4","This seat is already taken");
+        map.put("buy_5","Purchase done. Your ticket ID: ");
+        map.put("buy_6","Pick departure & arrival airports");
+
+        map.put("check_0"," Ticket id: ");
+        map.put("check_1","\n Price: ");
+        map.put("check_2","\n Row: ");
+        map.put("check_3","\n Seating: ");
+        map.put("check_4","Provide correct ticket ID");
+        map.put("check_5","Ticket ID HAS to be a number");
+
         //worker window
         map.put("W_plane","Add plane");
         map.put("W_airport","Add airport");
@@ -110,6 +125,22 @@ public class EngLang extends Language {
         // worker cancelwindow
         map.put("Wcf_title","Delete flight");
 
+        // worker things
+        map.put("Wfadd_0","This plane is not operational. Pick another one.");
+        map.put("Wfadd_1","Flight added");
+        map.put("Wfadd_2","Invalid date format");
+        map.put("Wfedit_0","Flight edited");
+        map.put("Wfedit_1"," Departure");
+        map.put("Wfedit_2","\n Arrival:");
+        map.put("Wfedit_3","\n Date: ");
+        map.put("Wfedit_4","\n Price: ");
+
+        map.put("Wdel_0","Pick departure & arrival airport!");
+        map.put("Wdel_1","Removed flight with id ");
+
+        map.put("Wap_0","Add plane with id: ");
+        map.put("Wap_1","Airport added");
+
         //admin window
         map.put("A_permissionbtn","Set permissions");
         map.put("A_salarysbtn","Set salary");
@@ -121,11 +152,21 @@ public class EngLang extends Language {
         map.put("Ag_workerbtn","Change to administration worker type account");
         //admin determine window
         map.put("Ad_workerlbl","Choose worker");
+        map.put("Ad_title","Set worker salary");
         map.put("Ad_salarylbl","Set salary to");
+        // admin thinds
+        map.put("give_0","This user is already a client!");
+        map.put("give_1","User is a client now");
+        map.put("give_2","This user is already an admin!");
+        map.put("give_3","User is an admin now");
+        map.put("give_4","This user is already a technical worker!");
+        map.put("give_5","This user is a technical worker now");
+        map.put("give_6","This user is already a administration worker!");
+        map.put("give_7","This user is a administration worker now");
 
-        //technical worker window
-        map.put("T_checkbtn","Choose worker");
-        map.put("Ad_salarylbl","Set salary to");
+        map.put("determine_0","Salary set");
+        map.put("determine_1","Salary has to be a number!");
+
         //technical worker window
         map.put("T_checkbtn","Check planes technical status");
         map.put("T_fix","Order fix");
@@ -136,10 +177,19 @@ public class EngLang extends Language {
         map.put("Tc_goodbtn","Change technical status to good");
         map.put("Tc_badbtn","Change technical status to not good");
         //technical workerorder
-        map.put("Tf_fixdate","Approximate fix date");
+        map.put("Tf_fixdate","Aproximate fix date");
         map.put("Tf_details","Repair details");
         //technical enter
         map.put("Te_date","Check-up date");
+        //technical things
+
+        map.put("Tcheck_0","Plane status changed to operational");
+        map.put("Tcheck_1","Plane status changed to unoperational");
+        map.put("Tcheck_2","Plane technical status is: ");
+
+        map.put("Tfix_0","Order has been added");
+
+        map.put("Tcheck_0","Check-up date is set up");
 
 
         return map;

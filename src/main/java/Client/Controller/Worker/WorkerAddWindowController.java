@@ -38,11 +38,36 @@ public class WorkerAddWindowController {
 	Button addButton;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label departure;
+	@FXML
+	Label arrival;
+	@FXML
+	Label date;
+	@FXML
+	Label price;
+	@FXML
+	Label pplane;
+	@FXML
+	Label title;
+
 
 	private Client client;
 	private Flights flights;
 	private Airports airport;
 	private Planes plane;
+
+	public void setLanguage() {
+		backButton.setText(client.getLanguage().get("Back_button"));
+		addButton.setText(client.getLanguage().get("Add_button"));
+		departure.setText(client.getLanguage().get("C_departurelbl"));
+		arrival.setText(client.getLanguage().get("C_arrivallbl"));
+		date.setText(client.getLanguage().get("Waf_date"));
+		price.setText(client.getLanguage().get("Waf_price"));
+		pplane.setText(client.getLanguage().get("Waf_plane"));
+		title.setText(client.getLanguage().get("W_flight"));
+	}
+
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
@@ -90,13 +115,13 @@ public class WorkerAddWindowController {
  			price = Integer.parseInt(priceTextField.getText());
 		}catch(Exception e)
 		{
-			infoLabel.setText("Uzupełnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 
 		if(arrival == null || departure == null || plane == null  || price == 0|| datePick.length()==0)
 		{
-			infoLabel.setText("Uzupełnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 		else
@@ -119,7 +144,7 @@ public class WorkerAddWindowController {
 				planeId = Integer.parseInt(temp);
 				state = client.getString("SELECT stan_techniczny FROM SAMOLOT WHERE ID_SAMOLOTU = " + planeId);
 				if (state.equals("niesprawny")) {
-					infoLabel.setText("Ten samolot jest niesprawny. Wybierz inny.");
+					infoLabel.setText(client.getLanguage().get("Wfadd_0"));
 					infoLabel.setVisible(true);
 				} else {
 					for (int i = 0; i < airport.size(); i++) {
@@ -132,11 +157,11 @@ public class WorkerAddWindowController {
 					}
 					flightId = Integer.parseInt(client.getString("SELECT MAX(ID_LOTU) FROM LOT")) + 1;
 					client.getString("INSERT INTO LOT VALUES(" + flightId + "," + planeId + "," + depId + "," + arrId + "," + price + ",TO_DATE('" + datePick + "','dd-mm-yyyy hh24:mi'))");
-					infoLabel.setText("Dodano lot");
+					infoLabel.setText(client.getLanguage().get("Wfadd_1"));
 					infoLabel.setVisible(true);
 				}
 			}catch (ParseException e) {
-				infoLabel.setText("Niepoprawny format");
+				infoLabel.setText(client.getLanguage().get("Wfadd_2"));
 				infoLabel.setVisible(true);
 			}
 

@@ -16,23 +16,23 @@
          </image>
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
-      <Label layoutX="270.0" layoutY="51.0" text="Usuń lot">
+      <Label fx:id="title" layoutX="270.0" layoutY="51.0" text="Usuń lot">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label layoutX="92.0" layoutY="102.0" text="Miasto wylotu">
+      <Label fx:id="departure" layoutX="92.0" layoutY="102.0" text="Miasto wylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="183.0" text="Miasto przylotu">
+      <Label fx:id="arrival" layoutX="87.0" layoutY="183.0" text="Miasto przylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="112.0" layoutY="260.0" text="Termin">
+      <Label fx:id="date" layoutX="112.0" layoutY="260.0" text="Termin">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

@@ -25,8 +25,19 @@ public class TechnicalWindowController {
 	Button logoutButton;
 	@FXML
 	Label clockLabel;
+	@FXML
+	Label title;
 
 	private Client client;
+
+	public void setLanguage() {
+		checkButton.setText(client.getLanguage().get("T_checkbtn"));
+		orderButton.setText(client.getLanguage().get("T_fix"));
+		enterButton.setText(client.getLanguage().get("T_checkup"));
+		logoutButton.setText(client.getLanguage().get("Logoff_button"));
+		title.setText(client.getLanguage().get("C_title"));
+	}
+
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
@@ -45,6 +56,7 @@ public class TechnicalWindowController {
 		TechnicalCheckWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
@@ -62,6 +74,7 @@ public class TechnicalWindowController {
 		TechnicalOrderWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
@@ -78,6 +91,7 @@ public class TechnicalWindowController {
 		TechnicalEnterWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}

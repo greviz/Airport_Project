@@ -27,8 +27,21 @@ private MainScreenController mainController;
 	ComboBox workerComboBox;
 	@FXML
 	TextField salaryTextField;
+	@FXML
+	Label worker;
+	@FXML
+	Label isalary;
+	@FXML
+	Label salary;
 	private Client client;
 
+	public void setLanguage() {
+		backButton.setText(client.getLanguage().get("Back_button"));
+		confirmButton.setText(client.getLanguage().get("Confirm_button"));
+		worker.setText(client.getLanguage().get("Ad_workerlbl"));
+		salary.setText(client.getLanguage().get("Ad_title"));
+		isalary.setText(client.getLanguage().get("Ad_salarylbl"));
+	}
 
 	@FXML
 	public void initialize() {
@@ -54,7 +67,7 @@ private MainScreenController mainController;
 	{
 		if(salaryTextField.getText().trim().isEmpty() || workerComboBox.getValue() == null)
 		{
-			infoLabel.setText("Uzupełnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 		else
@@ -79,7 +92,7 @@ private MainScreenController mainController;
 				if(technicalId!=-1)
 				{
 					client.getString("UPDATE PRACOWNIK_TECHNICZNY SET ZAROBKI =" + salary+ " WHERE ID_PRACOWNIKA = "+technicalId);
-					infoLabel.setText("Ustalono zarobki");
+					infoLabel.setText(client.getLanguage().get("determine_0"));
 					infoLabel.setVisible(true);
 				}
 				int workerId = Integer.parseInt(client.getString("SELECT ID_PRAC_ADM FROM UZYTKOWNIK WHERE " +
@@ -87,12 +100,12 @@ private MainScreenController mainController;
 				if(workerId!=-1)
 				{
 					client.getString("UPDATE PRACOWNIK_ADMINISTRACYJNY SET ZAROBKI =" + salary+ " WHERE ID_PRACOWNIKA = "+workerId);
-					infoLabel.setText("Ustalono zarobki");
+					infoLabel.setText(client.getLanguage().get("determine_0"));
 					infoLabel.setVisible(true);
 				}
 			}catch(Exception e)
 			{
-				infoLabel.setText("Zarobki muszą być liczbą");
+				infoLabel.setText(client.getLanguage().get("determine_1"));
 				infoLabel.setVisible(true);
 			}
 

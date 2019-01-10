@@ -39,10 +39,30 @@ public class ClientFindWindowController {
 	Button findButton;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label title;
+	@FXML
+	Label departure;
+	@FXML
+	Label arrival;
+	@FXML
+	Label date;
+
 
 	private Client client;
 	private Flights flights;
 	private Airports airport;
+
+	public void setLanguage(){
+		backButton.setText(client.getLanguage().get("Back_button"));
+		findButton.setText(client.getLanguage().get("Cf_searchbtn"));
+		title.setText(client.getLanguage().get("Cf_title"));
+		departure.setText(client.getLanguage().get("C_departurelbl"));
+		arrival.setText(client.getLanguage().get("C_arrivallbl"));
+		date.setText(client.getLanguage().get("C_date"));
+
+	}
+
 	public void addValues()
 	{
 		flights = client.getFligts();

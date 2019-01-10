@@ -24,8 +24,22 @@ public class WorkerAddAirportWindowController {
     @FXML
     Label infoLabel;
     @FXML
+    Label city;
+    @FXML
+    Label country;
+    @FXML
+    Label title;
+    @FXML
     Button addButton;
     private Client client;
+
+    public void setLanguage() {
+        backButton.setText(client.getLanguage().get("Back_button"));
+        addButton.setText(client.getLanguage().get("Add_button"));
+        title.setText(client.getLanguage().get("W_airport"));
+        city.setText(client.getLanguage().get("Wap_city"));
+        country.setText(client.getLanguage().get("Wap_country"));
+    }
 
     @FXML
     public void initialize() {
@@ -43,7 +57,7 @@ public class WorkerAddAirportWindowController {
         if(country.length()==0 || city.length()==0)
         {
             infoLabel.setVisible(true);
-            infoLabel.setText("Uzupelnij wszystkie pola");
+            infoLabel.setText(client.getLanguage().get("Reg_fields"));
         }
         else
         {
@@ -51,7 +65,7 @@ public class WorkerAddAirportWindowController {
             airportId = Integer.parseInt(client.getString("SELECT MAX(ID_LOTNISKA) FROM LOTNISKO")) + 1;
 
             client.getString("INSERT INTO LOTNISKO VALUES ("+airportId+",'"+country+"','"+city+"')");
-            infoLabel.setText("Dodano lotnisko");
+            infoLabel.setText(client.getLanguage().get("Wap_1"));
             infoLabel.setVisible(true);
          }
     }

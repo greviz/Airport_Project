@@ -25,11 +25,25 @@ public class WorkerWindowController {
 	Button logoutButton;
 	@FXML
 	Button airport;
+	@FXML
+	Button plane;
 	
 	@FXML
 	Label clockLabel;
+	@FXML
+	Label title;
 
 	private Client client;
+
+	public void setLanguage() {
+		addButton.setText(client.getLanguage().get("W_flight"));
+		plane.setText(client.getLanguage().get("W_plane"));
+		editButton.setText(client.getLanguage().get("W_edit"));
+		cancelButton.setText(client.getLanguage().get("W_postpone"));
+		airport.setText(client.getLanguage().get("W_airport"));
+		logoutButton.setText(client.getLanguage().get("Logoff_button"));
+		title.setText(client.getLanguage().get("C_title"));
+	}
 
 	@FXML
 	public void initialize() {
@@ -48,6 +62,7 @@ public class WorkerWindowController {
 		WorkerAddWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
@@ -64,6 +79,7 @@ public class WorkerWindowController {
 		WorkerAddPlaneWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		mainController.setScreen(pane);
 	}
 
@@ -80,6 +96,7 @@ public class WorkerWindowController {
 		WorkerAddAirportWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		mainController.setScreen(pane);
 	}
 	@FXML
@@ -95,6 +112,7 @@ public class WorkerWindowController {
 		WorkerEditWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
@@ -111,6 +129,7 @@ public class WorkerWindowController {
 		WorkerCancelWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}

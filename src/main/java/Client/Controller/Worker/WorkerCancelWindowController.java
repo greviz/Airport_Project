@@ -34,10 +34,27 @@ public class WorkerCancelWindowController {
 	Button addButton;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label departure;
+	@FXML
+	Label arrival;
+	@FXML
+	Label date;
+	@FXML
+	Label title;
 
 	Flights flights;
 	Airports airport;
 	private Client client;
+
+	public void setLanguage() {
+		backButton.setText(client.getLanguage().get("Back_button"));
+		addButton.setText(client.getLanguage().get("Delete_button"));
+		departure.setText(client.getLanguage().get("C_departurelbl"));
+		arrival.setText(client.getLanguage().get("C_arrivallbl"));
+		date.setText(client.getLanguage().get("C_date"));
+		title.setText(client.getLanguage().get("Wcf_title"));
+	}
 
 	@FXML
 	public void initialize() {
@@ -74,7 +91,7 @@ public class WorkerCancelWindowController {
 	public void date() {
 		if(arrivalComboBox.getValue()==null || departureComboBox.getValue()==null)
 		{
-			infoLabel.setText("Wybierz lotnisko przylotu i wylotu!");
+			infoLabel.setText(client.getLanguage().get("Wdel_0"));
 			infoLabel.setVisible(true);
 		}
 		else
@@ -110,7 +127,7 @@ public class WorkerCancelWindowController {
 		client.getString("DELETE FROM BILET WHERE ID_LOTU ="+flightId);
 		client.getString("DELETE FROM LOT WHERE ID_LOTU ="+flightId);
 		infoLabel.setVisible(true);
-		infoLabel.setText("Usunięto lot o id " + flightId);
+		infoLabel.setText(client.getLanguage().get("Wdel_1") + flightId);
 	}
 	@FXML
 	public void back() {

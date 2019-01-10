@@ -25,8 +25,22 @@ public class TechnicalEnterWindowController {
 	DatePicker datePicker;
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label title;
+	@FXML
+	Label pplane;
+	@FXML
+	Label checkdate;
 	private Client client;
 	private Planes plane;
+
+	public void setLanguage() {
+		backButton.setText(client.getLanguage().get("Back_button"));
+		confirmButton.setText(client.getLanguage().get("Confirm_button"));
+		title.setText(client.getLanguage().get("T_checkup"));
+		pplane.setText(client.getLanguage().get("T_plane"));
+		checkdate.setText(client.getLanguage().get("Te_date"));
+	}
 
 	@FXML
 	public void initialize() {
@@ -49,12 +63,12 @@ public class TechnicalEnterWindowController {
 			plane = (String) planeComboBox.getValue();
 			datePick = datePicker.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		} else {
 
@@ -73,7 +87,7 @@ public class TechnicalEnterWindowController {
 					+planeId+" AND DATA_LOTU LIKE TO_DATE('"+ datePick +"','YYYY-MM-DD'))");
 			client.getString("DELETE FROM LOT WHERE ID_SAMOLOTU LIKE " + planeId +" AND DATA_LOTU LIKE TO_DATE('"+ datePick +"','YYYY-MM-DD')");
 			client.getString("UPDATE SAMOLOT SET przeglad_okresowy = '"+datePick+"' WHERE ID_SAMOLOTU LIKE " + planeId);
-			infoLabel.setText("Wprowadzono termin przegl?du");
+			infoLabel.setText(client.getLanguage().get("Tcheck_0"));
 			infoLabel.setVisible(true);
 
 

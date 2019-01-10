@@ -88,6 +88,20 @@ public class PolLang extends Language {
         map.put("flight_7"," do ");
         map.put("flight_8"," dnia ");
 
+        map.put("buy_0","okno");
+        map.put("buy_1","środek");
+        map.put("buy_2","przejście");
+        map.put("buy_3","Rząd musi być liczbą mniejszą niż ");
+        map.put("buy_4","To miejsce jest już zajęte");
+        map.put("buy_5","Wykonano zakup. Twoje id biletu: ");
+        map.put("buy_6","Wybierz lotnisko przylotu i wylotu");
+
+        map.put("check_0"," Id biletu: ");
+        map.put("check_1","\n Cena: ");
+        map.put("check_2","\n Rząd: ");
+        map.put("check_3","\n Typ miejsca: ");
+        map.put("check_4","Wprowadź prawidłowy numer biletu");
+        map.put("check_5","Numer biletu musi być liczbą");
 
         //worker window
         map.put("W_plane","Dodaj samolot");
@@ -111,6 +125,22 @@ public class PolLang extends Language {
         // worker cancelwindow
         map.put("Wcf_title","Usuń lot");
 
+        // worker things
+        map.put("Wfadd_0","Ten samolot jest niesprawny. Wybierz inny.");
+        map.put("Wfadd_1","Dodano lot");
+        map.put("Wfadd_2","Niepoprawny format");
+        map.put("Wfedit_0","Edytowano lot");
+        map.put("Wfedit_1"," Wylot");
+        map.put("Wfedit_2","\n Przylot:");
+        map.put("Wfedit_3","\n Termin: ");
+        map.put("Wfedit_4","\n Cena: ");
+
+        map.put("Wdel_0","Wybierz lotnisko przylotu i wylotu!");
+        map.put("Wdel_1","Usunięto lot o id ");
+
+        map.put("Wap_0","Dodano samolot id: ");
+        map.put("Wap_1","Dodano lotnisko");
+
         //admin window
         map.put("A_permissionbtn","Nadaj uprawnienia");
         map.put("A_salarybtn","Ustal pensje");
@@ -122,8 +152,20 @@ public class PolLang extends Language {
         map.put("Ag_workerbtn","Zmień na konto typu pracownik administracyjny");
         //admin determine window
         map.put("Ad_workerlbl","Wybierz pracownika");
+        map.put("Ad_title","Ustal pensję pracownika");
         map.put("Ad_salarylbl","Wprowadź pensję");
+        // admin thinds
+        map.put("give_0","Ten użytkownik jest już klientem!");
+        map.put("give_1","Użytkownik został klientem");
+        map.put("give_2","Ten użytkownik jest już administratorem!");
+        map.put("give_3","Użytkownik został administratorem");
+        map.put("give_4","Ten użytkownik jest już pracownikiem technicznym!");
+        map.put("give_5","Użytkownik został pracownikiem technicznym");
+        map.put("give_6","Ten użytkownik jest już pracownikiem administracyjnym!");
+        map.put("give_7","Użytkownik został pracownikiem administracyjnym");
 
+        map.put("determine_0","Ustalono zarobki");
+        map.put("determine_1","Zarobki muszą być liczbą!");
 
         //technical worker window
         map.put("T_checkbtn","Sprawdź stan techniczny samolotu");
@@ -139,6 +181,16 @@ public class PolLang extends Language {
         map.put("Tf_details","Szczegóły zlecenia");
         //technical enter
         map.put("Te_date","Termin przeglądu");
+        //technical things
+
+        map.put("Tcheck_0","Zmieniono stan samolotu na sprawny");
+        map.put("Tcheck_1","Zmieniono stan samolotu na niesprawny");
+        map.put("Tcheck_2","Stan techniczny samolotu to: ");
+
+        map.put("Tfix_0","Dodano zlecienie");
+
+        map.put("Tcheck_0","Wprowadzono termin przeglądu");
+
 
         return map;
     }

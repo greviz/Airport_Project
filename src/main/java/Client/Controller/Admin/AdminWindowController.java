@@ -23,8 +23,18 @@ public class AdminWindowController {
 	Button logoutButton;
 	@FXML
 	Label clockLabel;
+	@FXML
+	Label title;
 
 	private Client client;
+
+
+	public void setLanguage() {
+		giveButton.setText(client.getLanguage().get("A_permissionbtn"));
+		determineButton.setText(client.getLanguage().get("A_salarybtn"));
+		logoutButton.setText(client.getLanguage().get("Logoff_button"));
+		title.setText(client.getLanguage().get("C_title"));
+	}
 
 	@FXML
 	public void initialize() {
@@ -44,6 +54,7 @@ public class AdminWindowController {
 		AdminGiveWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}
@@ -61,6 +72,7 @@ public class AdminWindowController {
 		AdminDetermineWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
 	}

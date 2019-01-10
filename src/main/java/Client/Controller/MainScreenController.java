@@ -64,6 +64,7 @@ public class MainScreenController {
 		ClientWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		setScreen(pane);
 	}
 	public void loadTechnicalWindow() {

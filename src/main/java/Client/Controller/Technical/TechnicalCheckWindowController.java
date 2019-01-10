@@ -28,8 +28,23 @@ public class TechnicalCheckWindowController {
 
 	@FXML
 	Label infoLabel;
+	@FXML
+	Label title;
+	@FXML
+	Label pplane;
 	private Client client;
 	private Planes plane;
+
+	public void setLanguage() {
+		backButton.setText(client.getLanguage().get("Back_button"));
+		checkButton.setText(client.getLanguage().get("Tc_checkbtn"));
+		efficientButton.setText(client.getLanguage().get("Tc_goodbtn"));
+		inefficientButton.setText(client.getLanguage().get("Tc_badbtn"));
+		title.setText(client.getLanguage().get("T_checkbtn"));
+		pplane.setText(client.getLanguage().get("T_plane"));
+
+	}
+
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
@@ -46,12 +61,12 @@ public class TechnicalCheckWindowController {
 		try {
 			plane = (String) planeComboBox.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		} else {
 
@@ -67,7 +82,7 @@ public class TechnicalCheckWindowController {
 			}
 			planeId = Integer.parseInt(temp);
 			client.getString("UPDATE SAMOLOT SET stan_techniczny ='sprawny' WHERE ID_SAMOLOTU LIKE "+planeId);
-			infoLabel.setText("Zmieniono stan samolotu na sprawny");
+			infoLabel.setText(client.getLanguage().get("Tcheck_0"));
 			infoLabel.setVisible(true);
 
 
@@ -80,12 +95,12 @@ public class TechnicalCheckWindowController {
 		try {
 			plane = (String) planeComboBox.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		} else {
 
@@ -101,7 +116,7 @@ public class TechnicalCheckWindowController {
 			}
 			planeId = Integer.parseInt(temp);
 			client.getString("UPDATE SAMOLOT SET stan_techniczny ='niesprawny' WHERE ID_SAMOLOTU LIKE "+planeId);
-			infoLabel.setText("Zmieniono stan samolotu na niesprawny");
+			infoLabel.setText(client.getLanguage().get("Tcheck_1"));
 			infoLabel.setVisible(true);
 
 
@@ -114,12 +129,12 @@ public class TechnicalCheckWindowController {
 		try {
 			plane = (String) planeComboBox.getValue();
 		} catch (Exception e) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 
 		if (plane == null) {
-			infoLabel.setText("Uzupe?nij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		} else {
 
@@ -135,7 +150,7 @@ public class TechnicalCheckWindowController {
 			}
 			planeId = Integer.parseInt(temp);
 			state = client.getString("SELECT stan_techniczny FROM SAMOLOT WHERE ID_SAMOLOTU = "+planeId);
-			infoLabel.setText("Stan techniczny samolotu to: " + state );
+			infoLabel.setText(client.getLanguage().get("Tcheck_2") + state );
 			infoLabel.setVisible(true);
 
 

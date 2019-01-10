@@ -29,10 +29,20 @@ public class ClientWindowController {
 	Button logoutButton;
 	@FXML 
 	Label clockLabel;
+	@FXML
+	Label ctitle;
 
 	private Client client;
 	
-	
+	public void setLanguage(){
+		findButton.setText(client.getLanguage().get("C_lotbtn"));
+		buyButton.setText(client.getLanguage().get("C_kupbtn"));
+		checkButton.setText(client.getLanguage().get("C_detailbtn"));
+		printButton.setText(client.getLanguage().get("C_printbtn"));
+		previewButton.setText(client.getLanguage().get("C_mapbtn"));
+		logoutButton.setText(client.getLanguage().get("Logoff_button"));
+		ctitle.setText(client.getLanguage().get("C_title"));
+	}
 	
 	@FXML
 	public void initialize() {
@@ -53,6 +63,7 @@ public class ClientWindowController {
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
 		ctrl.addValues();
+		ctrl.setLanguage();
 		mainController.setScreen(pane);
 	}
 	@FXML
@@ -69,6 +80,7 @@ public class ClientWindowController {
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
 		ctrl.addValues();
+		ctrl.setLanguage();
 		mainController.setScreen(pane);
 	}
 	@FXML
@@ -84,6 +96,7 @@ public class ClientWindowController {
 		ClientCheckWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		mainController.setScreen(pane);
 	}
 	@FXML
@@ -99,6 +112,7 @@ public class ClientWindowController {
 		ClientPrintWindowController ctrl = loader.getController();
 		ctrl.setClient(client);
 		ctrl.setMainController(mainController);
+		ctrl.setLanguage();
 		mainController.setScreen(pane);
 	}
 	@FXML
@@ -112,7 +126,9 @@ public class ClientWindowController {
 			e.printStackTrace();
 		}
 		ClientPreviewWindowController ctrl = loader.getController();
+		ctrl.setClient(client);
 		ctrl.setMainController(mainController);
+		ctrl.setLanguage();
 		mainController.setScreen(pane);
 	}
 	
