@@ -31,7 +31,7 @@ public class AdminWindowController {
 
 	public void setLanguage() {
 		giveButton.setText(client.getLanguage().get("A_permissionbtn"));
-		determineButton.setText(client.getLanguage().get("A_salarybtn"));
+		determineButton.setText(client.getLanguage().get("A_salarysbtn"));
 		logoutButton.setText(client.getLanguage().get("Logoff_button"));
 		title.setText(client.getLanguage().get("C_title"));
 	}
@@ -54,9 +54,9 @@ public class AdminWindowController {
 		AdminGiveWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
-		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
+		ctrl.setLanguage();
 	}
 
 	@FXML
@@ -72,9 +72,9 @@ public class AdminWindowController {
 		AdminDetermineWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
-		ctrl.setLanguage();
 		ctrl.addValues();
 		mainController.setScreen(pane);
+		ctrl.setLanguage();
 	}
 
 	@FXML

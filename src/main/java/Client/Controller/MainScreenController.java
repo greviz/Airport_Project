@@ -50,6 +50,7 @@ public class MainScreenController {
 		ctrl.setMainController(this);
 		ctrl.setClient(client);
 		setScreen(pane);
+		ctrl.setLanguage();
 	}
 	public void loadClientWindow() {
 		FXMLLoader loader = new FXMLLoader();
@@ -80,6 +81,7 @@ public class MainScreenController {
 		TechnicalWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		setScreen(pane);
 	}
 	public void loadAdminWindow() {
@@ -95,6 +97,7 @@ public class MainScreenController {
 		AdminWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		setScreen(pane);
 	}
 	public void loadWorkerWindow() {
@@ -110,6 +113,7 @@ public class MainScreenController {
 		WorkerWindowController ctrl = loader.getController();
 		ctrl.setMainController(this);
 		ctrl.setClient(client);
+		ctrl.setLanguage();
 		setScreen(pane);
 	}
 	private void setScreen(AnchorPane pane) {

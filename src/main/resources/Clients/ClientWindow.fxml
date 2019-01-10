@@ -14,14 +14,14 @@
             <Image url="@../wrightelectric.jpg" />
          </image>
       </ImageView>
-      <Label fx:id = "ctitle" layoutX="232.0" layoutY="50.0" text="Wybierz funkcje">
+      <Label fx:id="ctitle" layoutX="232.0" layoutY="50.0" text="Wybierz funkcje">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <Button fx:id="findButton" layoutX="246.0" layoutY="94.0" mnemonicParsing="false" onAction="#find" text="Wyszukaj lot" />
       <Button fx:id="buyButton" layoutX="257.0" layoutY="138.0" mnemonicParsing="false" onAction="#buy" text="Kup bilet" />
-      <Button fx:id="checkButton" layoutX="218.0" layoutY="180.0" mnemonicParsing="false" onAction="#check" text="Sprawdź szczegóły lotu" />
+      <Button fx:id="checkButton" alignment="CENTER" layoutX="218.0" layoutY="180.0" mnemonicParsing="false" onAction="#check" text="Sprawdź szczegóły lotu" textAlignment="CENTER" />
       <Button fx:id="printButton" layoutX="250.0" layoutY="221.0" mnemonicParsing="false" onAction="#print" text="Drukuj bilet" />
       <Button fx:id="previewButton" layoutX="221.0" layoutY="262.0" mnemonicParsing="false" onAction="#preview" text="Podgląd mapy lotniska" />
       <Button fx:id="logoutButton" layoutX="39.0" layoutY="337.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj" />

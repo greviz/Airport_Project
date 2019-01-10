@@ -143,7 +143,7 @@ public class PolLang extends Language {
 
         //admin window
         map.put("A_permissionbtn","Nadaj uprawnienia");
-        map.put("A_salarybtn","Ustal pensje");
+        map.put("A_salarysbtn","Ustal pensje");
         //admin give window
         map.put("Ag_user","Wybierz użytkownika");
         map.put("Ag_clientbtn","Zmień na konto typu klient");

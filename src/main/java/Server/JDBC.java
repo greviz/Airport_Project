@@ -12,7 +12,7 @@ public class JDBC {
 
 	public static void connectToDB() {
 		try {
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "C##NICK", "test");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracl", "lot", "lot");
 			st = con.createStatement();
 		} catch (SQLException e) {
 			e.printStackTrace();
