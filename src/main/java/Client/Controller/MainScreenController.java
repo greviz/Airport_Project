@@ -17,7 +17,8 @@ public class MainScreenController {
 
 	@FXML
 	private StackPane mainStackPane;
-	
+
+
 	private Client client;
 
 	@FXML
@@ -27,6 +28,7 @@ public class MainScreenController {
 	
 	{
 		client = new Client();
+		client.setLanguage("POL");
 		try {
 			client.Connect();
 		} catch (IOException e) {
@@ -123,5 +125,9 @@ public class MainScreenController {
 		mainStackPane.getChildren().clear();
 		mainStackPane.getChildren().add(pane);
 	}
-	
+	public	Client getClient() {
+		return client;
+	}
+
+
 }

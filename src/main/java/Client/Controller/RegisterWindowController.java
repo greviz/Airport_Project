@@ -3,12 +3,16 @@ package Client.Controller;
 import Client.Client;
 import Client.Display;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 public class RegisterWindowController {
 
@@ -42,11 +46,45 @@ public class RegisterWindowController {
 	@FXML
 	Button registerButton;
 	@FXML
+	Button backButton;
+	@FXML
 	Label clockLabel;
-
+	@FXML
+	Label passLabel;
+	@FXML
+	Label firstNameLabel;
+	@FXML
+	Label lastNameLabel;
+	@FXML
+	Label phoneLabel;
+	@FXML
+	Label countryLabel;
+	@FXML
+	Label cityLabel;
+	@FXML
+	Label streetLabel;
+	@FXML
+	Label houseLabel;
+	@FXML
+	Label localLabel;
+	@FXML
+	Label regInfoLabel;
 	private Client client;
 
-
+	public void setLanguage() {
+		passLabel.setText(client.getLanguage().get("Reg_passwd"));
+		firstNameLabel.setText(client.getLanguage().get("Reg_name"));
+		lastNameLabel.setText(client.getLanguage().get("Reg_surename"));
+		phoneLabel.setText(client.getLanguage().get("Reg_phone"));
+		countryLabel.setText(client.getLanguage().get("Reg_country"));
+		cityLabel.setText(client.getLanguage().get("Reg_city"));
+		streetLabel.setText(client.getLanguage().get("Reg_street"));
+		houseLabel.setText(client.getLanguage().get("Reg_housenumber"));
+		localLabel.setText(client.getLanguage().get("Reg_doornumber"));
+		regInfoLabel.setText(client.getLanguage().get("Reg_info"));
+		backButton.setText(client.getLanguage().get("Reg_backbtn"));
+		registerButton.setText(client.getLanguage().get("Reg_regbtn"));
+	}
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
@@ -110,7 +148,20 @@ public class RegisterWindowController {
 
 	@FXML
 	public void back() {
-		mainController.loadStartWindow();
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(this.getClass().getResource("/StartWindow.fxml"));
+		AnchorPane pane = null;
+
+		try {
+			pane = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		StartWindowController ctrl = loader.getController();
+		ctrl.setMainController(mainController);
+		ctrl.setClient(client);
+		mainController.setScreen(pane);
+		ctrl.setLanguage();
 	}
 
 	public void setMainController(MainScreenController mainController) {
@@ -126,4 +177,6 @@ public class RegisterWindowController {
 	public void setstuff(){
 		registerButton.setText(client.getLanguage().get("Reg_regbtn"));
 	}
+
+
 }

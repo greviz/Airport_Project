@@ -34,7 +34,7 @@ public class PolLang extends Language {
         map.put("Reg_street","Ulica *");
         map.put("Reg_housenumber","Nr domu *");
         map.put("Reg_doornumber","Nr lokalu");
-        map.put("Reg_regbtn","Zarejestruj chujku");
+        map.put("Reg_regbtn","Zarejestruj");
         map.put("Reg_backbtn","Wróć do ekranu logowania");
         map.put("Reg_info","Pola oznaczone * są obowiązkowe");
         map.put("Reg_regsucc","Rejestracja zakończona sukcesem");

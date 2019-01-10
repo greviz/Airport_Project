@@ -48,15 +48,11 @@ public class StartWindowController {
 
 	@FXML
 	public void initialize() {
-
 		(new Display(clockLabel)).start();
-
 	}
 
 
-	public void init(){
 
-	}
 
 	@FXML
 	public void login() {
@@ -94,7 +90,9 @@ public class StartWindowController {
 		RegisterWindowController ctrl = loader.getController();
 		ctrl.setMainController(mainController);
 		ctrl.setClient(client);
+
 		mainController.setScreen(pane);
+		ctrl.setLanguage();
 	}
 
 
@@ -126,5 +124,12 @@ public class StartWindowController {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	public void setLanguage() {
+		loginButton.setText(client.getLanguage().get("Login_button"));
+		registerButton.setText(client.getLanguage().get("Register_button"));
+		noacc.setText(client.getLanguage().get("No_Acc"));
+		passwdLbl.setText(client.getLanguage().get("Passwd_Label"));
 	}
 }
