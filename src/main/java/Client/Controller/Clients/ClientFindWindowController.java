@@ -62,14 +62,14 @@ public class ClientFindWindowController {
 		stg.setScene(scene);
 		stg.setWidth(600);
 		stg.setHeight(400);
-		stg.setTitle("Znalezione loty");
+		stg.setTitle(client.getLanguage().get("flight_0"));
 
 		String arrival = (String) arrivalComboBox.getValue();
 		String departure = (String) departureComboBox.getValue();
 		LocalDate date = datePicker.getValue();
 		if(arrival == null || departure == null || date ==null)
 		{
-			infoLabel.setText("Uzupełnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 			infoLabel.setVisible(true);
 		}
 		else {
@@ -89,8 +89,8 @@ public class ClientFindWindowController {
 				temp.getChars(0, 10, arr, 0);
 				String d = new String(arr);
 				if (flights.get(i).getDepartureAirportId() == depId && flights.get(i).getArrivalAirportId() == arrId && d.equals(date.toString())) {
-					Label l1 = new Label("Znaleziono lot nr " + ++y + " wylot z " + departure + " przylot do " + arrival +
-							" \nData i czas wylotu " + temp + " cena biletu " + flights.get(i).getTicketPrice());
+					Label l1 = new Label(client.getLanguage().get("flight_1") + ++y + client.getLanguage().get("flight_2") + departure + client.getLanguage().get("flight_3") + arrival +
+							client.getLanguage().get("flight_4") + temp + client.getLanguage().get("flight_5") + flights.get(i).getTicketPrice());
 					l1.setLayoutY(y * 35 + 20);
 					l1.setLayoutX(30);
 					pane.getChildren().add(l1);
@@ -99,7 +99,7 @@ public class ClientFindWindowController {
 			Label l = new Label();
 			l.setLayoutX(30);
 			l.setLayoutY(20);
-			l.setText("Poszukiwany lot z " + departure + " do " + arrival + " dnia " + date);
+			l.setText(client.getLanguage().get("flight_6") + departure + client.getLanguage().get("flight_7") + arrival + client.getLanguage().get("flight_8") + date);
 
 			pane.getChildren().add(l);
 			stg.show();

@@ -17,7 +17,7 @@
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label layoutX="261.0" layoutY="48.0" text="Zleć naprawę">
+      <Label layoutX="261.0" layoutY="48.0" text="Sprawdź stan techniczny">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -46,12 +46,11 @@ public class RegisterWindowController {
 
 	private Client client;
 
+
 	@FXML
 	public void initialize() {
 		(new Display(clockLabel)).start();
 	}
-
-
 
 	@FXML
 	public void register() {
@@ -72,12 +71,12 @@ public class RegisterWindowController {
 
 		if (temp != -1) {
 			infoLabel.setVisible(true);
-			infoLabel.setText("Rejestracja zakończona niepowodzeniem");
+			infoLabel.setText(client.getLanguage().get("Reg_regfail"));
 		} else if (login.length() == 0 || pass.length() == 0 || firstName.length() == 0 || lastName.length() == 0
 				|| country.length() == 0 || city.length() == 0 || street.length() == 0 || pesel.length() == 0
 				|| houseNr.length() == 0) {
 			infoLabel.setVisible(true);
-			infoLabel.setText("Uzupełnij wszystkie pola");
+			infoLabel.setText(client.getLanguage().get("Reg_fields"));
 		} else {
 
 			int clientId = 0;
@@ -105,7 +104,7 @@ public class RegisterWindowController {
 
 
 			infoLabel.setVisible(true);
-			infoLabel.setText("Rejestracja zakończona sukcesem");
+			infoLabel.setText(client.getLanguage().get("Reg_succ"));
 		}
 	}
 
@@ -122,5 +121,9 @@ public class RegisterWindowController {
 
 		this.client = client;
 
+	}
+	@FXML
+	public void setstuff(){
+		registerButton.setText(client.getLanguage().get("Reg_regbtn"));
 	}
 }
