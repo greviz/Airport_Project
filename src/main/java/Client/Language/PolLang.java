@@ -103,6 +103,8 @@ public class PolLang extends Language {
         map.put("check_4","Wprowadź prawidłowy numer biletu");
         map.put("check_5","Numer biletu musi być liczbą");
 
+        map.put("print_0"," Zapisano do pliku! ");
+
         //worker window
         map.put("W_plane","Dodaj samolot");
         map.put("W_airport","Dodaj lotnisko");

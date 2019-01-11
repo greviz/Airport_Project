@@ -54,9 +54,9 @@ public class ClientPrintWindowController {
 			infoLabel.setVisible(false);
 			Ticket t = client.getTicket(new Ticket(id,client.getU().getIdKlienta()));
 			if(t.getId()!=-1) {
-				String temp = " Id biletu: "+t.getId() + "\n Cena: " + t.getPrice() + "\n Rzad: " + t.getRow()
-						+ "\n Typ miejsca: " + t.getType() + client.getFlightInfo(t.getIdLotu());
-				infoLabel.setText("Zapisano do pliku");
+				String temp = client.getLanguage().get("check_0")+t.getId() + client.getLanguage().get("check_1") + t.getPrice() + client.getLanguage().get("check_2") + t.getRow()
+						+ client.getLanguage().get("check_3") + t.getType() + client.getFlightInfo(t.getIdLotu());
+				infoLabel.setText(client.getLanguage().get("print_0"));
 				PrintWriter writer = new PrintWriter("Ticket nr " + t.getId() + ".txt", "UTF-8");
 
 				writer.println(temp);
@@ -64,12 +64,12 @@ public class ClientPrintWindowController {
 			}
 			else
 			{
-				infoLabel.setText("Wprowad? prawid?owy numer biletu");
+				infoLabel.setText(client.getLanguage().get("check_4"));
 			}
 			infoLabel.setVisible(true);
 		}catch (Exception e)
 		{
-			infoLabel.setText("Numer biletu musi by? liczb?");
+			infoLabel.setText(client.getLanguage().get("check_5"));
 			infoLabel.setVisible(true);
 		}
 

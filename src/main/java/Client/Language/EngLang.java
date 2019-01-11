@@ -103,6 +103,9 @@ public class EngLang extends Language {
         map.put("check_4","Provide correct ticket ID");
         map.put("check_5","Ticket ID HAS to be a number");
 
+        map.put("print_0"," Written to file! ");
+
+
         //worker window
         map.put("W_plane","Add plane");
         map.put("W_airport","Add airport");
