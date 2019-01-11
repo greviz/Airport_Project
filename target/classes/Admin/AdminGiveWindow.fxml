@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Admin.AdminGiveWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Admin.AdminGiveWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,17 +17,17 @@
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label fx:id = "title" layoutX="233.0" layoutY="51.0" text="Nadaj uprawnienia">
+      <Label id="head" fx:id="title" layoutX="233.0" layoutY="51.0" text="Nadaj uprawnienia">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <ComboBox fx:id="workerComboBox" layoutX="235.0" layoutY="119.0" onAction="#workerChoice" prefWidth="150.0" />
       <Label fx:id="user" layoutX="71.0" layoutY="123.0" text="Wybierz użytkownika" />
-      <Button fx:id="clientButton" layoutX="230.0" layoutY="174.0" mnemonicParsing="false" onAction="#client" text="Zmień na konto typu klient" />
+      <Button fx:id="clientButton" layoutX="218.0" layoutY="174.0" mnemonicParsing="false" onAction="#client" prefHeight="31.0" prefWidth="198.0" text="Zmień na konto typu klient" />
       <Button fx:id="technicalButton" layoutX="188.0" layoutY="257.0" mnemonicParsing="false" onAction="#technical" text="Zmień na konto typu pracownik techniczny" />
       <Button fx:id="workerButton" layoutX="175.0" layoutY="301.0" mnemonicParsing="false" onAction="#worker" text="Zmień na konto typu pracownik administracyjny" />
-      <Button fx:id="adminButton" layoutX="210.0" layoutY="216.0" mnemonicParsing="false" onAction="#admin" text="Zmień na konto typu administrator" />
+      <Button fx:id="adminButton" layoutX="210.0" layoutY="216.0" mnemonicParsing="false" onAction="#admin" prefHeight="31.0" prefWidth="218.0" text="Zmień na konto typu administrator" />
       <Label fx:id="infoLabel" alignment="CENTER" layoutX="142.0" layoutY="353.0" prefHeight="18.0" prefWidth="334.0" textAlignment="CENTER" visible="false" />
    </children>
 </AnchorPane>

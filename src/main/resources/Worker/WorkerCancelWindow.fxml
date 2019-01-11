@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerCancelWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerCancelWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -16,7 +16,7 @@
          </image>
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
-      <Label fx:id="title" layoutX="270.0" layoutY="51.0" text="Usuń lot">
+      <Label id="head" fx:id="title" alignment="CENTER" layoutX="225.0" layoutY="49.0" prefWidth="150.0" text="Usuń lot">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -38,9 +38,9 @@
          </font>
       </Label>
       <ComboBox fx:id="departureComboBox" layoutX="224.0" layoutY="98.0" onAction="#departure" prefWidth="150.0" />
-      <ComboBox fx:id="arrivalComboBox" layoutX="221.0" layoutY="179.0" onAction="#arrival" prefWidth="150.0" />
+      <ComboBox fx:id="arrivalComboBox" layoutX="221.0" layoutY="179.0" onAction="#arrival" prefWidth="150.0" stylesheets="@../Css/App.css" />
       <ComboBox fx:id="dateComboBox" layoutX="221.0" layoutY="256.0" onMouseClicked="#date" prefWidth="150.0" />
-      <Button fx:id="addButton" layoutX="277.0" layoutY="295.0" mnemonicParsing="false" onAction="#add" text="Usuń" />
-      <Label fx:id="infoLabel" alignment="CENTER" layoutX="177.0" layoutY="340.0" prefHeight="18.0" prefWidth="238.0" textAlignment="CENTER" />
+      <Button fx:id="addButton" layoutX="267.0" layoutY="305.0" mnemonicParsing="false" onAction="#add" stylesheets="@../Css/App.css" text="Usuń" />
+      <Label fx:id="infoLabel" alignment="CENTER" layoutX="176.0" layoutY="353.0" prefHeight="18.0" prefWidth="238.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

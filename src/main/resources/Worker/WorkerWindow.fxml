@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../wrightelectric.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="title" layoutX="232.0" layoutY="50.0" text="Wybierz funkcje">
+      <Label id="head" fx:id="title" layoutX="232.0" layoutY="50.0" text="Wybierz funkcje">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -24,7 +24,8 @@ public class StartWindowController {
 
 	private MainScreenController mainController;
 	private Client client;
-
+	@FXML
+	AnchorPane root;
 	@FXML
 	TextField loginTextField;
 	@FXML

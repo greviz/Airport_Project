@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Technical.TechnicalOrderWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Technical.TechnicalOrderWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,7 +19,7 @@
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label fx:id="title" layoutX="261.0" layoutY="48.0" text="Zleć naprawę">
+      <Label id="head" fx:id="title" layoutX="261.0" layoutY="48.0" text="Zleć naprawę">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -31,13 +31,13 @@
          </font>
       </Label>
       <DatePicker fx:id="datePicker" layoutX="274.0" layoutY="145.0" onAction="#date" />
-      <Label fx:id ="fixdate" layoutX="52.0" layoutY="149.0" text="Termin ukończenia naprawy">
+      <Label fx:id="fixdate" layoutX="52.0" layoutY="149.0" text="Termin ukończenia naprawy">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <Button fx:id="confirmButton" layoutX="273.0" layoutY="293.0" mnemonicParsing="false" onAction="#confirm" text="Potwierdź" />
-      <Label fx:id ="details" layoutX="76.0" layoutY="221.0" prefHeight="18.0" prefWidth="112.0" text="Szczegóły zlecenia">
+      <Label fx:id="details" layoutX="76.0" layoutY="221.0" prefHeight="18.0" prefWidth="112.0" text="Szczegóły zlecenia">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

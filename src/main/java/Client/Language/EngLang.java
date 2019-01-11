@@ -189,7 +189,7 @@ public class EngLang extends Language {
 
         map.put("Tfix_0","Order has been added");
 
-        map.put("Tcheck_0","Check-up date is set up");
+        map.put("Tcheck_3","Check-up date is set up");
 
 
         return map;

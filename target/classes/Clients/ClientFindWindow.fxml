@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Clients.ClientFindWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Clients.ClientFindWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -18,22 +18,22 @@
       </ImageView>
       <Button fx:id="backButton" layoutX="26.0" layoutY="349.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label fx:id ="title" layoutX="234.0" layoutY="41.0" text="Wyszukiwanie lotu">
+      <Label id="head" fx:id="title" layoutX="234.0" layoutY="41.0" text="Wyszukiwanie lotu">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id ="departure" layoutX="72.0" layoutY="82.0" text="Miasto wylotu">
+      <Label fx:id="departure" alignment="CENTER" layoutX="67.0" layoutY="82.0" prefWidth="120.0" text="Miasto wylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id ="arrival" layoutX="67.0" layoutY="172.0" text="Miasto przylotu">
+      <Label fx:id="arrival" alignment="CENTER" layoutX="67.0" layoutY="172.0" prefHeight="18.0" prefWidth="120.0" text="Miasto przylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id ="date" layoutX="92.0" layoutY="262.0" text="Termin">
+      <Label fx:id="date" alignment="CENTER" layoutX="67.0" layoutY="262.0" prefWidth="120.0" text="Termin">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -42,6 +42,6 @@
       <ComboBox fx:id="arrivalComboBox" layoutX="225.0" layoutY="168.0" onAction="#arrival" prefWidth="150.0" />
       <Button fx:id="findButton" layoutX="275.0" layoutY="301.0" mnemonicParsing="false" onAction="#find" text="Szukaj" />
       <DatePicker fx:id="datePicker" layoutX="213.0" layoutY="258.0" onAction="#date" />
-      <Label fx:id="infoLabel" layoutX="233.0" layoutY="340.0" prefHeight="18.0" prefWidth="133.0" visible="false" />
+      <Label fx:id="infoLabel" alignment="CENTER" layoutX="183.0" layoutY="355.0" prefHeight="19.0" prefWidth="234.0" visible="false" />
    </children>
 </AnchorPane>

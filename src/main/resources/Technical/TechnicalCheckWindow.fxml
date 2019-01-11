@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Technical.TechnicalCheckWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Technical.TechnicalCheckWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,13 +17,13 @@
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label fx:id="title" layoutX="261.0" layoutY="48.0" text="Sprawdź stan techniczny">
+      <Label id="head" fx:id="title" layoutX="212.0" layoutY="52.0" text="Sprawdź stan techniczny">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <ComboBox fx:id="planeComboBox" layoutX="279.0" layoutY="93.0" prefWidth="150.0" />
-      <Label fx:id ="pplane" layoutX="84.0" layoutY="97.0" text="Wybierz samolot">
+      <Label fx:id="pplane" layoutX="84.0" layoutY="97.0" text="Wybierz samolot">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

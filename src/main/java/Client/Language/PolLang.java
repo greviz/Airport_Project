@@ -189,7 +189,7 @@ public class PolLang extends Language {
 
         map.put("Tfix_0","Dodano zlecienie");
 
-        map.put("Tcheck_0","Wprowadzono termin przeglądu");
+        map.put("Tcheck_3","Wprowadzono termin przeglądu");
 
 
         return map;

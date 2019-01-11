@@ -8,36 +8,36 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.RegisterWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.RegisterWindowController">
    <children>
       <ImageView fx:id="image" fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@wrightelectric.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="139.0" layoutY="47.0" text="Login *" />
-      <TextField fx:id="loginTextField" layoutX="80.0" layoutY="75.0" />
-      <Label fx:id="passLabel" alignment="CENTER" layoutX="87.0" layoutY="107.0" prefHeight="18.0" prefWidth="142.0" text="Hasło *" />
-      <PasswordField fx:id="passField" layoutX="80.0" layoutY="131.0" />
-      <Label fx:id="firstNameLabel" alignment="CENTER" layoutX="84.0" layoutY="163.0" prefHeight="18.0" prefWidth="142.0" text="Imię *" />
-      <TextField fx:id="firstNameTextField" layoutX="79.0" layoutY="187.0" />
-      <Label fx:id="lastNameLabel" alignment="CENTER" layoutX="84.0" layoutY="219.0" prefHeight="18.0" prefWidth="142.0" text="Nazwisko *" />
-      <TextField fx:id="lastNameTextField" layoutX="80.0" layoutY="247.0" />
-      <Label alignment="CENTER" layoutX="263.0" layoutY="47.0" prefHeight="18.0" prefWidth="131.0" text="Pesel *" />
-      <TextField fx:id="peselTextField" layoutX="250.0" layoutY="75.0" />
-      <Label fx:id="phoneLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="254.0" layoutY="106.0" prefHeight="18.0" prefWidth="149.0" text="Nr telefonu" />
-      <TextField fx:id="phoneNrTextField" layoutX="250.0" layoutY="131.0" />
-      <Label layoutX="306.0" layoutY="162.0" text="E-mail" />
-      <TextField fx:id="emailTextField" layoutX="249.0" layoutY="187.0" />
-      <Label fx:id="countryLabel" alignment="CENTER" layoutX="248.0" layoutY="219.0" prefHeight="18.0" prefWidth="149.0" text="Kraj *" />
-      <TextField fx:id="countryTextField" layoutX="250.0" layoutY="247.0" />
-      <Label fx:id="cityLabel" alignment="CENTER" layoutX="422.0" layoutY="46.0" prefHeight="18.0" prefWidth="131.0" text="Miejscowość *" />
+      <Label alignment="CENTER" layoutX="48.0" layoutY="46.0" prefWidth="148.0" text="Login *" />
+      <TextField fx:id="loginTextField" layoutX="40.0" layoutY="75.0" />
+      <Label fx:id="passLabel" alignment="CENTER" layoutX="48.0" layoutY="106.0" prefHeight="18.0" prefWidth="148.0" text="Hasło *" />
+      <PasswordField fx:id="passField" layoutX="40.0" layoutY="131.0" />
+      <Label fx:id="firstNameLabel" alignment="CENTER" layoutX="48.0" layoutY="162.0" prefHeight="18.0" prefWidth="148.0" text="Imię *" />
+      <TextField fx:id="firstNameTextField" layoutX="40.0" layoutY="187.0" />
+      <Label fx:id="lastNameLabel" alignment="CENTER" layoutX="48.0" layoutY="219.0" prefHeight="18.0" prefWidth="148.0" text="Nazwisko *" />
+      <TextField fx:id="lastNameTextField" layoutX="40.0" layoutY="247.0" />
+      <Label alignment="CENTER" layoutX="238.0" layoutY="47.0" prefHeight="18.0" prefWidth="148.0" text="Pesel *" />
+      <TextField fx:id="peselTextField" layoutX="230.0" layoutY="75.0" />
+      <Label fx:id="phoneLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="238.0" layoutY="106.0" prefHeight="18.0" prefWidth="148.0" text="Nr telefonu" />
+      <TextField fx:id="phoneNrTextField" layoutX="230.0" layoutY="131.0" />
+      <Label alignment="CENTER" layoutX="238.0" layoutY="162.0" prefHeight="19.0" prefWidth="148.0" text="E-mail" />
+      <TextField fx:id="emailTextField" layoutX="230.0" layoutY="187.0" />
+      <Label fx:id="countryLabel" alignment="CENTER" layoutX="238.0" layoutY="219.0" prefHeight="18.0" prefWidth="148.0" text="Kraj *" />
+      <TextField fx:id="countryTextField" layoutX="230.0" layoutY="247.0" />
+      <Label fx:id="cityLabel" alignment="CENTER" layoutX="428.0" layoutY="46.0" prefHeight="18.0" prefWidth="148.0" text="Miejscowość *" />
       <TextField fx:id="cityTextField" layoutX="414.0" layoutY="75.0" />
-      <Label fx:id="streetLabel" alignment="CENTER" layoutX="413.0" layoutY="106.0" prefHeight="18.0" prefWidth="149.0" text="Ulica *" />
+      <Label fx:id="streetLabel" alignment="CENTER" layoutX="428.0" layoutY="106.0" prefHeight="18.0" prefWidth="148.0" text="Ulica *" />
       <TextField fx:id="streetTextField" layoutX="414.0" layoutY="131.0" />
       <TextField fx:id="houseNrTextField" layoutX="414.0" layoutY="187.0" />
-      <Label fx:id="houseLabel" alignment="CENTER" layoutX="414.0" layoutY="162.0" prefHeight="18.0" prefWidth="150.0" text="Nr domu *" />
-      <Label fx:id="localLabel" alignment="CENTER" layoutX="413.0" layoutY="219.0" prefHeight="18.0" prefWidth="149.0" text="Nr lokalu" />
+      <Label fx:id="houseLabel" alignment="CENTER" layoutX="428.0" layoutY="162.0" prefHeight="18.0" prefWidth="148.0" text="Nr domu *" />
+      <Label fx:id="localLabel" alignment="CENTER" layoutX="428.0" layoutY="219.0" prefHeight="18.0" prefWidth="148.0" text="Nr lokalu" />
       <TextField fx:id="flatNrTextField" layoutX="414.0" layoutY="247.0" />
       <Label fx:id="regInfoLabel" layoutX="79.0" layoutY="299.0" text="Pola oznaczone * są obowiązkowe" />
       <Button fx:id="registerButton" layoutX="493.0" layoutY="295.0" mnemonicParsing="false" onAction="#register" text="Zarejestruj" />

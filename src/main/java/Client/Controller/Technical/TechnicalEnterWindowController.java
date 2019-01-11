@@ -87,7 +87,7 @@ public class TechnicalEnterWindowController {
 					+planeId+" AND DATA_LOTU LIKE TO_DATE('"+ datePick +"','YYYY-MM-DD'))");
 			client.getString("DELETE FROM LOT WHERE ID_SAMOLOTU LIKE " + planeId +" AND DATA_LOTU LIKE TO_DATE('"+ datePick +"','YYYY-MM-DD')");
 			client.getString("UPDATE SAMOLOT SET przeglad_okresowy = '"+datePick+"' WHERE ID_SAMOLOTU LIKE " + planeId);
-			infoLabel.setText(client.getLanguage().get("Tcheck_0"));
+			infoLabel.setText(client.getLanguage().get("Tcheck_3"));
 			infoLabel.setVisible(true);
 
 

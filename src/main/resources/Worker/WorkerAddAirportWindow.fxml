@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerAddAirportWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerAddAirportWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,17 +19,17 @@
       <TextField fx:id="cityTextField" layoutX="235.0" layoutY="188.0" />
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
       <Button fx:id="addButton" layoutX="276.0" layoutY="256.0" mnemonicParsing="false" onAction="#edit" text="Dodaj" />
-      <Label fx:id="city" layoutX="118.0" layoutY="192.0" text="Miasto">
+      <Label fx:id="city" alignment="CENTER" layoutX="118.0" layoutY="192.0" prefHeight="19.0" prefWidth="70.0" text="Miasto">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="country" layoutX="126.0" layoutY="102.0" text="Kraj">
+      <Label fx:id="country" alignment="CENTER" layoutX="118.0" layoutY="102.0" prefWidth="70.0" text="Kraj">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="title" layoutX="257.0" layoutY="57.0" text="Dodaj lotnisko">
+      <Label id="head" fx:id="title" layoutX="257.0" layoutY="57.0" text="Dodaj lotnisko">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

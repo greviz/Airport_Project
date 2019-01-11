@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerAddWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerAddWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,40 +17,40 @@
          </image>
       </ImageView>
       <Button fx:id="backButton" layoutX="27.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" text="Cofnij" />
-      <Label fx:id="title" layoutX="267.0" layoutY="48.0" text="Dodaj lot">
+      <Label id="head" fx:id="title" layoutX="267.0" layoutY="48.0" text="Dodaj lot">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Label>
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <Label fx:id="departure" layoutX="82.0" layoutY="92.0" text="Miasto wylotu">
+      <Label fx:id="departure" alignment="CENTER" layoutX="9.0" layoutY="98.0" prefWidth="227.0" text="Miasto wylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="arrival" layoutX="77.0" layoutY="138.0" text="Miasto przylotu">
+      <Label fx:id="arrival" alignment="CENTER" layoutX="9.0" layoutY="138.0" prefWidth="227.0" text="Miasto przylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="date" layoutX="9.0" layoutY="229.0" text="Termin w formacie dd-mm-yyyy hh:mm">
+      <Label fx:id="date" alignment="CENTER" layoutX="9.0" layoutY="229.0" prefHeight="19.0" prefWidth="227.0" text="Termin w formacie dd-mm-yyyy hh:mm">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox fx:id="departureComboBox" layoutX="235.0" layoutY="88.0" onAction="#departure" prefWidth="150.0" />
-      <ComboBox fx:id="arrivalComboBox" layoutX="235.0" layoutY="134.0" onAction="#arrival" prefWidth="150.0" />
+      <ComboBox fx:id="departureComboBox" layoutX="240.0" layoutY="88.0" onAction="#departure" prefWidth="150.0" />
+      <ComboBox fx:id="arrivalComboBox" layoutX="240.0" layoutY="134.0" onAction="#arrival" prefWidth="150.0" />
       <Button fx:id="addButton" layoutX="276.0" layoutY="303.0" mnemonicParsing="false" onAction="#add" text="Dodaj" />
       <Label fx:id="infoLabel" alignment="CENTER" layoutX="147.0" layoutY="340.0" prefHeight="18.0" prefWidth="303.0" textAlignment="CENTER" />
-      <ComboBox fx:id="planeComboBox" layoutX="235.0" layoutY="180.0" prefWidth="150.0" />
-      <TextField fx:id="datePicker" layoutX="236.0" layoutY="225.0" onAction="#date" />
-      <TextField fx:id="priceTextField" layoutX="236.0" layoutY="264.0" />
-      <Label fx:id="price" layoutX="108.0" layoutY="268.0" text="Cena">
+      <ComboBox fx:id="planeComboBox" layoutX="240.0" layoutY="180.0" prefWidth="150.0" />
+      <TextField fx:id="datePicker" layoutX="240.0" layoutY="225.0" onAction="#date" />
+      <TextField fx:id="priceTextField" layoutX="240.0" layoutY="264.0" />
+      <Label fx:id="price" alignment="CENTER" layoutX="9.0" layoutY="268.0" prefWidth="227.0" text="Cena">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="pplane" layoutX="98.0" layoutY="184.0" text="Samolot">
+      <Label fx:id="pplane" alignment="CENTER" layoutX="9.0" layoutY="184.0" prefWidth="227.0" text="Samolot">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

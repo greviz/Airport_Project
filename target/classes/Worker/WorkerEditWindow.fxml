@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerEditWindowController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Worker.WorkerEditWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,22 +21,22 @@
       <ComboBox fx:id="departureComboBox" layoutX="407.0" layoutY="85.0" onAction="#departure" prefWidth="150.0" />
       <ComboBox fx:id="arrivalComboBox" layoutX="407.0" layoutY="136.0" onAction="#arrival" prefWidth="150.0" />
       <Button fx:id="editButton" layoutX="285.0" layoutY="337.0" mnemonicParsing="false" onAction="#edit" text="Edytuj" />
-      <Label fx:id="date" layoutX="170.0" layoutY="191.0" text="Termin w formacie dd-mm-yyyy HH:MM">
+      <Label fx:id="date" alignment="CENTER" layoutX="170.0" layoutY="191.0" prefHeight="19.0" prefWidth="239.0" text="Termin w formacie dd-mm-yyyy HH:MM">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="arrival" layoutX="257.0" layoutY="140.0" text="Miasto przylotu">
+      <Label fx:id="arrival" alignment="CENTER" layoutX="170.0" layoutY="140.0" prefWidth="239.0" text="Miasto przylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="departure" layoutX="260.0" layoutY="89.0" text="Miasto wylotu">
+      <Label fx:id="departure" alignment="CENTER" layoutX="170.0" layoutY="89.0" prefWidth="239.0" text="Miasto wylotu">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="title" layoutX="275.0" layoutY="41.0" text="Edytuj lot">
+      <Label id="head" fx:id="title" layoutX="266.0" layoutY="42.0" text="Edytuj lot">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -44,13 +44,13 @@
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
       <TextField fx:id="dateTextField" layoutX="408.0" layoutY="187.0" />
       <TextField fx:id="priceTextField" layoutX="408.0" layoutY="235.0" />
-      <Label fx:id="price" layoutX="288.0" layoutY="239.0" text="Cena">
+      <Label fx:id="price" alignment="CENTER" layoutX="170.0" layoutY="239.0" prefWidth="239.0" text="Cena">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <ComboBox fx:id="flightComboBox" layoutX="30.0" layoutY="123.0" prefWidth="150.0" />
-      <Label fx:id="pflight" layoutX="45.0" layoutY="89.0" text="Wybierz lot do edycji">
+      <Label fx:id="pflight" alignment="CENTER" layoutX="45.0" layoutY="89.0" text="Wybierz lot do edycji">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

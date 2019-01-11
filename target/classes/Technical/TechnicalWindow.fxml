@@ -7,21 +7,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Technical.TechnicalWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../Css/App.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.Technical.TechnicalWindowController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../wrightelectric.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="title" layoutX="232.0" layoutY="50.0" text="Wybierz funkcje">
+      <Label id="head" fx:id="title" layoutX="243.0" layoutY="49.0" text="Wybierz funkcje">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="checkButton" layoutX="190.0" layoutY="110.0" mnemonicParsing="false" onAction="#check" text="Sprawdź stan techniczny samolotu" />
-      <Button fx:id="orderButton" layoutX="235.0" layoutY="187.0" mnemonicParsing="false" onAction="#order" text="Zleć naprawę" />
-      <Button fx:id="enterButton" layoutX="137.0" layoutY="257.0" mnemonicParsing="false" onAction="#enter" text="Wprowadź termin kolejnego przeglądu okresowego" />
+      <Button fx:id="checkButton" layoutX="194.0" layoutY="184.0" mnemonicParsing="false" onAction="#check" text="Sprawdź stan techniczny samolotu" />
+      <Button fx:id="orderButton" layoutX="250.0" layoutY="259.0" mnemonicParsing="false" onAction="#order" text="Zleć naprawę" />
+      <Button fx:id="enterButton" layoutX="148.0" layoutY="114.0" mnemonicParsing="false" onAction="#enter" text="Wprowadź termin kolejnego przeglądu okresowego" />
       <Button fx:id="logoutButton" layoutX="39.0" layoutY="337.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
    </children>

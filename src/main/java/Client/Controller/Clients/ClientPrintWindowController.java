@@ -32,9 +32,8 @@ public class ClientPrintWindowController {
 	private Client client;
 
 	public void setLanguage(){
-
 		backButton.setText(client.getLanguage().get("Back_button"));
-		title.setText(client.getLanguage().get("C_printftn"));
+		title.setText(client.getLanguage().get("Cc_title"));
 		printButton.setText(client.getLanguage().get("Cp_printbtn"));
 		ticketId.setText(client.getLanguage().get("C_ticketlbl"));
 
