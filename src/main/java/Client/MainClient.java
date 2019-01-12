@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -24,6 +25,7 @@ public class MainClient extends Application {
 		Scene scene = new Scene(pane);
 
 		stg.setScene(scene);
+		stg.getIcons().add(new Image("/plane.png"));
 		stg.setWidth(600);
 		stg.setHeight(400);
 		stg.setTitle("System zarządzania lotniskiem");
