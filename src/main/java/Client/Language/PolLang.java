@@ -89,8 +89,8 @@ public class PolLang extends Language {
         map.put("flight_8"," dnia ");
 
         map.put("buy_0","okno");
-        map.put("buy_1","środek");
-        map.put("buy_2","przejście");
+        map.put("buy_1","srodek");
+        map.put("buy_2","przejscie");
         map.put("buy_3","Rząd musi być liczbą mniejszą niż ");
         map.put("buy_4","To miejsce jest już zajęte");
         map.put("buy_5","Wykonano zakup. Twoje id biletu: ");

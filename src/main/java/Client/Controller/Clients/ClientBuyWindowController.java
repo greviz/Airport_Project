@@ -122,6 +122,17 @@ public class ClientBuyWindowController {
 				if (row > rowNr) {
 					throw new Exception(client.getLanguage().get("buy_3") + rowNr);
 				}
+				if(seat.equals("middle"))
+				{
+					seat="srodek";
+				}else if(seat.equals("window"))
+				{
+					seat="okno";
+				}
+				else if(seat.equals("hallway"))
+				{
+					seat="przejscie";
+				}
 				if(!client.getString("SELECT ID_BILETU FROM BILET WHERE RZAD LIKE " + row + " AND TYP_MIEJSCA LIKE '" + seat + "' AND ID_LOTU LIKE "+flightId).equals("-1"))
 				{
 					throw new Exception(client.getLanguage().get("buy_4"));
