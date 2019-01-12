@@ -27,7 +27,7 @@ public class MainClient extends Application {
 		stg.setWidth(600);
 		stg.setHeight(400);
 		stg.setTitle("System zarządzania lotniskiem");
-		//stg.setResizable(false);
+		stg.setResizable(false);
 		stg.show();
 	
 	}
