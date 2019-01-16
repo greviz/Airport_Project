@@ -19,11 +19,11 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="findButton" alignment="CENTER" layoutX="218.0" layoutY="94.0" mnemonicParsing="false" onAction="#find" prefWidth="158.0" text="Wyszukaj lot" />
-      <Button fx:id="buyButton" alignment="CENTER" layoutX="218.0" layoutY="138.0" mnemonicParsing="false" onAction="#buy" prefWidth="158.0" text="Kup bilet" />
-      <Button fx:id="checkButton" alignment="CENTER" layoutX="218.0" layoutY="180.0" mnemonicParsing="false" onAction="#check" prefHeight="31.0" prefWidth="158.0" text="Sprawdź szczegóły lotu" textAlignment="CENTER" />
-      <Button fx:id="printButton" alignment="CENTER" layoutX="218.0" layoutY="221.0" mnemonicParsing="false" onAction="#print" prefWidth="158.0" text="Drukuj bilet" />
-      <Button fx:id="previewButton" alignment="CENTER" layoutX="218.0" layoutY="262.0" mnemonicParsing="false" onAction="#preview" prefWidth="158.0" text="Podgląd mapy lotniska" />
+      <Button fx:id="findButton" alignment="CENTER" layoutX="218.0" layoutY="94.0" mnemonicParsing="false" onAction="#find" prefWidth="153.0" text="Wyszukaj lot" />
+      <Button fx:id="buyButton" alignment="CENTER" layoutX="218.0" layoutY="138.0" mnemonicParsing="false" onAction="#buy" prefWidth="153.0" text="Kup bilet" />
+      <Button fx:id="checkButton" alignment="CENTER" layoutX="218.0" layoutY="180.0" mnemonicParsing="false" onAction="#check" prefHeight="31.0" prefWidth="153.0" text="Sprawdź szczegóły lotu" textAlignment="CENTER" />
+      <Button fx:id="printButton" alignment="CENTER" layoutX="218.0" layoutY="221.0" mnemonicParsing="false" onAction="#print" prefWidth="153.0" text="Drukuj bilet" />
+      <Button fx:id="previewButton" alignment="CENTER" layoutX="218.0" layoutY="262.0" mnemonicParsing="false" onAction="#preview" prefWidth="153.0" text="Podgląd mapy lotniska" />
       <Button fx:id="logoutButton" layoutX="39.0" layoutY="337.0" mnemonicParsing="false" onAction="#logout" text="Wyloguj" />
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
    </children>

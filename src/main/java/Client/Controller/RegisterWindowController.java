@@ -2,6 +2,7 @@ package Client.Controller;
 
 import Client.Client;
 import Client.Display;
+import Client.PasswordAuthentication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -104,7 +105,7 @@ public class RegisterWindowController {
 		String street = streetTextField.getText();
 		String houseNr = houseNrTextField.getText();
 		String flatNr = flatNrTextField.getText();
-		String statment = "SELECT * FROM UZYTKOWNIK where LOGIN like '" + login + "' and HASLO like '" + pass + "'";
+		String statment = "SELECT id_uzytkownika FROM UZYTKOWNIK where LOGIN like '" + login+"'";
 		int temp = Integer.parseInt(client.getString(statment));
 
 		if (temp != -1) {
@@ -128,11 +129,11 @@ public class RegisterWindowController {
 			statment = "SELECT MAX(ID_UZYTKOWNIKA) FROM UZYTKOWNIK";
 			max = Integer.parseInt(client.getString(statment)) + 1;
 
-			if (phone.length() == 0) {
+			if (phone.length() == 0 || phone.length()>9) {
 				phone = "0";
-			}
 
-			statment = "INSERT INTO uzytkownik VALUES (" + max + ",'" + login + "','" + pass + "',"
+			}
+			statment = "INSERT INTO uzytkownik VALUES (" + max + ",'" + login + "','" + new PasswordAuthentication().hash(pass) + "',"
 					+ Integer.parseInt(phone) + ",'" + country + "','" + city + "','" + street + "','" + email + "',"
 					+ pesel + ",'" + firstName + "','" + lastName + "'," + clientId + ",null,null,null, '" + houseNr
 					+ "','" + flatNr + "')";
@@ -142,7 +143,7 @@ public class RegisterWindowController {
 
 
 			infoLabel.setVisible(true);
-			infoLabel.setText(client.getLanguage().get("Reg_succ"));
+			infoLabel.setText(client.getLanguage().get("Reg_regsucc"));
 		}
 	}
 

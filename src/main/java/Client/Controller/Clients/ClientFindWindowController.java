@@ -9,12 +9,8 @@ import Data.Flight;
 import Data.Flights;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
@@ -120,6 +116,7 @@ public class ClientFindWindowController {
 			l.setLayoutX(30);
 			l.setLayoutY(20);
 			l.setText(client.getLanguage().get("flight_6") + departure + client.getLanguage().get("flight_7") + arrival + client.getLanguage().get("flight_8") + date);
+
 
 			pane.getChildren().add(l);
 			stg.show();

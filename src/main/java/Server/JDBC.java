@@ -1,5 +1,6 @@
 package Server;
 
+import Client.PasswordAuthentication;
 import Data.*;
 
 import java.sql.*;
@@ -21,15 +22,15 @@ public class JDBC {
 	}
 
 	public static void closeConnection() {
-		System.out.print("\nZamykanie polaczenia z baz?:");
+		System.out.print("\nZamykanie polaczenia z baza:");
 		try {
 			st.close();
 			con.close();
 		} catch (SQLException e) {
-			System.out.println("Bl?d przy zamykaniu pol?czenia z baz?! " + e.getMessage() + ": " + e.getErrorCode());
+			System.out.println("Blad przy zamykaniu polaczenia z baz?! " + e.getMessage() + ": " + e.getErrorCode());
 			System.exit(4);
 		}
-		System.out.print(" zamkni?cie OK");
+		System.out.print(" zamkniecie OK");
 	}
 
 	public static String getString(String statment) {
@@ -52,8 +53,13 @@ public class JDBC {
 
 		System.out.println("DOWNLOADING FROM DB");
 		User user = null;
-		String sql = "Select id_uzytkownika,login,haslo,id_klienta,id_administratora,id_prac_tech,id_prac_adm from UZYTKOWNIK WHERE LOGIN LIKE '"
-				+ object.getLogin() + "' AND HASLO LIKE '" + object.getPassword() + "'";
+		String sql = "SELECT HASLO FROM UZYTKOWNIK WHERE LOGIN LIKE '"+object.getLogin()+"'";
+		String token = getString(sql);
+		System.out.println(token);
+		if(new PasswordAuthentication().authenticate(object.getPassword(),token)) {
+			sql = "Select id_uzytkownika,login,haslo,id_klienta,id_administratora,id_prac_tech,id_prac_adm from UZYTKOWNIK WHERE LOGIN LIKE '"
+					+ object.getLogin() + "'";
+		}
 		try {
 			res = st.executeQuery(sql);
 		} catch (SQLException e1) {

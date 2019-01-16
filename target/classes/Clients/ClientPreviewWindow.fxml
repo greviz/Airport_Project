@@ -21,10 +21,5 @@
          </font>
       </Label>
       <Label fx:id="clockLabel" layoutX="520.0" layoutY="23.0" text="00:00:00" />
-      <ImageView fitHeight="269.0" fitWidth="534.0" layoutX="104.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../lotnisko.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
