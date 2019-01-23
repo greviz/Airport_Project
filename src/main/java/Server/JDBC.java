@@ -11,9 +11,9 @@ public class JDBC {
 	private static Connection con;
 	private static ResultSet res;
 
-	public static void connectToDB() {
+	public static void connectToDB(String login,String password) {
 		try {
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracl", "lot", "lot");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:oracl", login, password);
 			st = con.createStatement();
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -9,9 +9,11 @@ import Client.Controller.Technical.TechnicalWindowController;
 import Client.Controller.Worker.WorkerWindowController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class MainScreenController {
 
@@ -32,7 +34,8 @@ public class MainScreenController {
 		try {
 			client.Connect();
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Zly port");
+			System.exit(0);
 		}
 	}
 	public void loadStartWindow()

@@ -107,7 +107,7 @@ public class ClientFindWindowController {
 				if (flights.get(i).getDepartureAirportId() == depId && flights.get(i).getArrivalAirportId() == arrId && d.equals(date.toString())) {
 					Label l1 = new Label(client.getLanguage().get("flight_1") + ++y + client.getLanguage().get("flight_2") + departure + client.getLanguage().get("flight_3") + arrival +
 							client.getLanguage().get("flight_4") + temp + client.getLanguage().get("flight_5") + flights.get(i).getTicketPrice());
-					l1.setLayoutY(y * 35 + 20);
+					l1.setLayoutY(y * 55 + 30);
 					l1.setLayoutX(30);
 					pane.getChildren().add(l1);
 				}

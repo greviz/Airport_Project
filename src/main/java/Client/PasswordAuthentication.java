@@ -57,8 +57,10 @@ public final class PasswordAuthentication
     public boolean authenticate(char[] password, String token)
     {
         Matcher m = layout.matcher(token);
-        if (!m.matches())
-            throw new IllegalArgumentException("Invalid token format");
+        if (!m.matches()) {
+           // throw new IllegalArgumentException("Invalid token format");
+            return false;
+        }
         int iterations = iterations(Integer.parseInt(m.group(1)));
         byte[] hash = Base64.getUrlDecoder().decode(m.group(2));
         byte[] salt = Arrays.copyOfRange(hash, 0, SIZE / 8);

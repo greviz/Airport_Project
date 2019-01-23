@@ -6,15 +6,19 @@ import java.net.Socket;
 
 public class Server {
 
-    public static void Start() {
-        int port = 3619;
+    static ServerSocket serverSocket;
+    public static void Start(int i) {
+        int port = i;
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(port);
             System.out.println("Port Serwera = " + port + "\n");
             while (true) {
                 Socket socket = serverSocket.accept();
-                (new ServerTCPThread(socket)).start();
+                ServerTCPThread runnable = new ServerTCPThread(socket);
+                Thread thread = new Thread(runnable);
+                thread.start();
+           //     (new ServerTCPThread(socket)).start();
             }
         } catch (Exception e) {
             System.err.println(e);
@@ -27,5 +31,15 @@ public class Server {
                 }
         }
     }
+    public static void Stop()
+    {
+
+        try {
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

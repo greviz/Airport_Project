@@ -26,7 +26,7 @@ public class Client {
 	private Ticket ticket;
 	private Planes plane;
 	public void Connect() throws IOException {
-		int port = 3619;
+		int port = 3649;
 		mySocket = new Socket("127.0.0.1", port);
 	}
 

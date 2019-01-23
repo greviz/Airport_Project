@@ -8,11 +8,11 @@ import java.sql.ResultSet;
 
 import Data.*;
 
-public class ServerTCPThread extends Thread {
+public class ServerTCPThread implements Runnable{
 	Socket mySocket;
 
 	public ServerTCPThread(Socket socket) {
-		super(); // konstruktor klasy Thread
+		super();
 		mySocket = socket;
 	}
 

@@ -120,7 +120,7 @@ public class PolLang extends Language {
         map.put("Wap_city","Miasto");
         // worker add flight
         map.put("Waf_plane","Samolot");
-        map.put("Waf_date","Termin w formacie dd-mm-yyyy HH:HH");
+        map.put("Waf_date","Termin format dd-mm-yyyy HH:MM");
         map.put("Waf_price","Cena");
         // worker editflight
         map.put("Wef_choose","Wybierz lot do edycji");
